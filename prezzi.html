@@ -24,10 +24,14 @@
 .cta-box p { font-family: var(--display); font-size: 1.2rem; color: var(--sea-deep); margin-bottom: 1rem; font-style: italic; }
 .cta-box small { display: block; color: var(--ink-soft); font-size: .9rem; margin-bottom: 1.5rem; font-family: var(--body); }
 
-/* Placeholder content styling */
-.ph-content-block { background: var(--sand); border: 1px dashed var(--stone); padding: 3rem 2rem; text-align: center; margin: 2rem 0; border-radius: 2px; }
-.ph-content-block p { color: var(--stone-dark); font-size: .9rem; margin: 0; }
-.ph-content-block strong { color: var(--sea-deep); font-size: 1.1rem; display: block; margin-bottom: .5rem; font-family: var(--display); }
+/* Pricing blocks (lightweight, matches palette) */
+.price-block { background: rgba(243,238,228,.55); border: 1px solid rgba(200,186,162,.45); padding: 1.8rem 1.6rem; margin: 1.25rem 0; }
+.price-title { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .75rem; margin-bottom: .75rem; }
+.price-title h3 { margin: 0; }
+.price-amount { font-family: var(--display); color: var(--sea-deep); font-size: 1.35rem; font-weight: 400; }
+.price-cta { margin-top: 1rem; }
+.note-box { background: var(--sand); border-left: 3px solid var(--gold); padding: 1.4rem 1.6rem; margin-top: 2rem; }
+.note-box h3 { margin-top: 0; }
 </style>
 </head>
 <body>
@@ -62,35 +66,88 @@
 
   <div class="section">
     <div class="container">
-      <nav class="breadcrumb" aria-label="Percorso di navigazione"><ol><li><a href="index.html">Home</a></li><li>Prezzi e Servizi</li></ol></nav>
+      <nav class="breadcrumb" aria-label="Percorso di navigazione">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Prezzi e Servizi</li>
+        </ol>
+      </nav>
 
       <div class="prezzi-content">
 
         <!-- =====================================================
              ZONA TESTI INTOCCABILI
-             Inserire qui il contenuto ESATTO della pagina Prezzi
-             copiato da https://www.villaelianasulmare.it/prezzi/
+             Contenuto ESATTO inserito come richiesto
              ===================================================== -->
 
-        <div class="ph-content-block">
-          <strong>[ Testi Prezzi e Servizi ]</strong>
-          <p>In questa area va inserito il contenuto esatto della pagina Prezzi e Servizi.<br>
-          Copia il testo da <a href="https://www.villaelianasulmare.it" target="_blank" rel="noopener" style="color:var(--sea)">villaelianasulmare.it</a> e incollalo qui con la stessa formattazione.</p>
+        <h2>Villa di Lusso Villa Eliana Porto Pino - Sardegna</h2>
+        <p><strong>Prezzi per soggiorno minimo di 7 notti.</strong></p>
+
+        <div class="price-block">
+          <div class="price-title">
+            <h3>Aprile - Maggio - Ottobre</h3>
+            <div class="price-amount">&euro;3.500 / per settimana</div>
+          </div>
+          <ul>
+            <li>Pulizia una volta a settimana</li>
+            <li>Servizio di benvenuto</li>
+            <li>Kit di cortesia</li>
+            <li>Informazioni turistiche</li>
+          </ul>
+          <div class="price-cta">
+            <a href="contatti.html" class="btn btn--gold">Prenota Ora</a>
+          </div>
         </div>
 
-        <!-- Esempio struttura attesa:
-        <h2>Tariffe settimanali</h2>
-        <h3>Alta Stagione (luglio &mdash; agosto)</h3>
-        <p>... testo esatto ...</p>
+        <div class="price-block">
+          <div class="price-title">
+            <h3>Giugno - Settembre</h3>
+            <div class="price-amount">&euro;4.000 / per settimana</div>
+          </div>
+          <ul>
+            <li>Pulizia una volta a settimana</li>
+            <li>Servizio di benvenuto</li>
+            <li>Kit di cortesia</li>
+            <li>Informazioni turistiche</li>
+          </ul>
+          <div class="price-cta">
+            <a href="contatti.html" class="btn btn--gold">Prenota Ora</a>
+          </div>
+        </div>
 
-        <h2>Cosa &egrave; incluso</h2>
-        <ul>
-          <li>... voci esatte ...</li>
-        </ul>
+        <div class="price-block">
+          <div class="price-title">
+            <h3>Luglio - Agosto</h3>
+            <div class="price-amount">&euro;7.000 / per settimana</div>
+          </div>
+          <ul>
+            <li>Kit di cortesia</li>
+            <li>Pulizia una volta a settimana</li>
+            <li>Servizio di benvenuto</li>
+            <li>Informazioni turistiche</li>
+          </ul>
+          <div class="price-cta">
+            <a href="contatti.html" class="btn btn--gold">Prenota Ora</a>
+          </div>
+        </div>
 
-        <h2>Condizioni di prenotazione</h2>
-        <p>... testo esatto ...</p>
-        -->
+        <div class="note-box">
+          <h3>📝Nota</h3>
+
+          <p><strong>Condizioni soggiorno</strong></p>
+
+          <p><strong>Soggiorno minimo:</strong> 7 notti durante tutto l'anno.</p>
+
+          <p><strong>Caparra:</strong> si richiede una cauzione del 50% da versare via bonifico bancario al momento della conferma della prenotazione.</p>
+
+          <p><strong>Pulizie:</strong> quota una tantum di 200 &euro;.</p>
+
+          <p><strong>Biancheria:</strong> quota di 40 &euro; ad ospite.</p>
+
+          <p><strong>Deposito cauzionale:</strong> 500 &euro; all'arrivo in struttura (in contanti).</p>
+
+          <p><strong>Rimborso deposito:</strong> entro 14 giorni dal check-out, previa verifica delle condizioni di Villa Eliana Sul Mare, il deposito sara rimborsato per intero via bonifico bancario.</p>
+        </div>
 
       </div>
 
@@ -106,14 +163,63 @@
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand"><a href="index.html" class="footer-logo">Villa Eliana sul Mare<sub>Porto Pino &middot; Sardegna</sub></a><p>Una dimora esclusiva affacciata sul mare cristallino di Porto Pino.</p><div class="footer-social"><a href="#" class="social-a" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a><a href="#" class="social-a" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></div></div>
-      <div class="footer-col"><h5>La Villa</h5><nav class="footer-links"><a href="villa.html">La Villa</a><a href="gallery.html">Gallery</a><a href="prezzi.html">Prezzi e Servizi</a><a href="manuale.html">Manuale della Casa</a><a href="contatti.html">Richiedi disponibilit&agrave;</a></nav></div>
-      <div class="footer-col"><h5>Porto Pino</h5><nav class="footer-links"><a href="#">Spiagge e Natura</a><a href="#">Come arrivare</a></nav></div>
-      <div class="footer-col"><h5>Contatti</h5><div class="footer-links"><div class="footer-contact-row"><a href="tel:+39000000000">+39 000 000 0000</a></div><div class="footer-contact-row"><a href="mailto:info@villaelianasulmare.it">info@villaelianasulmare.it</a></div></div></div>
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">Villa Eliana sul Mare<sub>Porto Pino &middot; Sardegna</sub></a>
+        <p>Una dimora esclusiva affacciata sul mare cristallino di Porto Pino.</p>
+        <div class="footer-social">
+          <a href="#" class="social-a" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+          <a href="#" class="social-a" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>La Villa</h5>
+        <nav class="footer-links">
+          <a href="villa.html">La Villa</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="prezzi.html">Prezzi e Servizi</a>
+          <a href="manuale.html">Manuale della Casa</a>
+          <a href="contatti.html">Richiedi disponibilit&agrave;</a>
+        </nav>
+      </div>
+
+      <div class="footer-col">
+        <h5>Porto Pino</h5>
+        <nav class="footer-links">
+          <a href="#">Spiagge e Natura</a>
+          <a href="#">Come arrivare</a>
+        </nav>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contatti</h5>
+        <div class="footer-links">
+          <div class="footer-contact-row"><a href="tel:+39000000000">+39 000 000 0000</a></div>
+          <div class="footer-contact-row"><a href="mailto:info@villaelianasulmare.it">info@villaelianasulmare.it</a></div>
+        </div>
+      </div>
     </div>
-    <div class="footer-bottom"><span>&copy; 2025 Villa Eliana sul Mare</span><div class="footer-policy"><a href="#">Privacy Policy</a><a href="#">Cookie Policy</a></div></div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2025 Villa Eliana sul Mare</span>
+      <div class="footer-policy">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
   </div>
 </footer>
+
 <script src="js/main.js"></script>
 </body>
 </html>
