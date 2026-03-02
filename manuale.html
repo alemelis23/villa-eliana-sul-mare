@@ -9,41 +9,173 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+
 <style>
-.manuale-content { max-width: 860px; margin-inline: auto; }
-.manuale-content h2 { font-family: var(--display); font-size: clamp(1.5rem,3vw,2rem); color: var(--sea-deep); margin-top: 4rem; margin-bottom: 1rem; padding-top: 2rem; border-top: 1px solid rgba(200,186,162,.4); font-weight: 400; }
+/* Layout contenuto */
+.manuale-content { max-width: 980px; margin-inline: auto; }
+.manuale-lead { max-width: 860px; }
+
+.manuale-content h2 {
+  font-family: var(--display);
+  font-size: clamp(1.55rem,3vw,2.05rem);
+  color: var(--sea-deep);
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(200,186,162,.4);
+  font-weight: 400;
+  position: relative;
+}
 .manuale-content h2:first-child { margin-top: 0; border-top: none; padding-top: 0; }
-.manuale-content h3 { font-family: var(--display); font-size: 1.35rem; color: var(--sea); margin-top: 2rem; margin-bottom: .5rem; font-weight: 400; }
-.manuale-content p { color: var(--ink-soft); line-height: 1.8; }
-.manuale-content ul, .manuale-content ol { padding-left: 1.5rem; margin-bottom: 1.2em; }
+
+.manuale-content h3 {
+  font-family: var(--display);
+  font-size: 1.2rem;
+  color: var(--sea-deep);
+  margin: 0 0 .5rem;
+  font-weight: 400;
+  letter-spacing: .01em;
+}
+
+.manuale-content p { color: var(--ink-soft); line-height: 1.85; margin: .6rem 0; }
+.manuale-content ul, .manuale-content ol { padding-left: 1.25rem; margin: .6rem 0 1.1rem; }
 .manuale-content ul li { list-style: disc; color: var(--ink-soft); margin-bottom: .4em; line-height: 1.75; }
 .manuale-content ol li { list-style: decimal; color: var(--ink-soft); margin-bottom: .4em; line-height: 1.75; }
 .manuale-content strong { color: var(--ink); }
 .manuale-content a { color: var(--sea); text-decoration: underline; text-underline-offset: 3px; }
 
-.manuale-intro { margin-bottom: 2rem; }
-.manuale-intro p { margin: .35rem 0 0; }
+/* Indice */
+.toc-wrap {
+  margin: 1.5rem 0 2.25rem;
+  border: 1px solid rgba(200,186,162,.45);
+  background: rgba(245,240,232,.55);
+  border-radius: 18px;
+  padding: 1.25rem 1.25rem 1rem;
+}
+.toc-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: .75rem;
+}
+.toc-title h3 { margin: 0; font-size: 1.05rem; }
+.toc-actions { display:flex; gap:.5rem; align-items:center; }
+.toc-actions a {
+  font-size: .85rem;
+  color: var(--sea-deep);
+  text-decoration: none;
+  border: 1px solid rgba(16,38,52,.18);
+  background: rgba(255,255,255,.55);
+  padding: .45rem .65rem;
+  border-radius: 999px;
+}
+.toc-actions a:hover { background: rgba(255,255,255,.8); }
 
-.m-block { background: rgba(245,240,232,.45); border: 1px solid rgba(200,186,162,.45); border-radius: 16px; padding: 1.5rem 1.25rem; margin: 1.25rem 0; }
-.m-block .m-emoji { font-size: 1.25rem; line-height: 1; margin-bottom: .75rem; }
-.m-block h3 { margin-top: 0; }
-.m-note { background: rgba(16,38,52,.06); border: 1px solid rgba(16,38,52,.12); }
-.m-warning { background: rgba(163, 65, 56, .06); border: 1px solid rgba(163, 65, 56, .18); }
-.m-warning strong { color: #a34138; }
-hr.manuale-sep { border: none; border-top: 1px solid rgba(200,186,162,.35); margin: 2rem 0; }
+.toc-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .4rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.toc-list a {
+  display: block;
+  text-decoration: none;
+  color: var(--ink);
+  padding: .55rem .75rem;
+  border-radius: 12px;
+  border: 1px solid transparent;
+}
+.toc-list a:hover {
+  border-color: rgba(200,186,162,.55);
+  background: rgba(255,255,255,.45);
+}
+@media (min-width: 860px) {
+  .toc-list { grid-template-columns: 1fr 1fr; }
+}
 
-.kv { display: grid; grid-template-columns: 1fr; gap: .6rem; margin-top: .75rem; }
-.kv-row { display: flex; gap: .75rem; align-items: baseline; }
-.kv-key { min-width: 120px; color: var(--ink); font-weight: 600; }
-.kv-val { color: var(--ink-soft); }
+/* H2 cliccabili + icona link discreta */
+.h2-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  color: inherit;
+  text-decoration: none;
+}
+.h2-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+.h2-link .anchor-ico {
+  width: 16px;
+  height: 16px;
+  opacity: .55;
+  transform: translateY(1px);
+}
+.h2-link:hover .anchor-ico { opacity: .85; }
 
-@media (min-width: 720px) {
-  .kv { grid-template-columns: 1fr 1fr; }
+/* Cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 1.25rem 0 0;
+}
+@media (min-width: 860px) {
+  .card-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.info-card {
+  background: rgba(255,255,255,.65);
+  border: 1px solid rgba(200,186,162,.5);
+  border-radius: 18px;
+  padding: 1.1rem 1.15rem;
+  box-shadow: 0 10px 24px rgba(16,38,52,.06);
+}
+.info-card--wide { grid-column: 1 / -1; }
+.info-card p { margin: .5rem 0; }
+.info-card ul { margin-top: .6rem; }
+.info-card .microtitle {
+  font-size: .8rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(16,38,52,.65);
+  margin-bottom: .5rem;
+  font-weight: 500;
+}
+.notice {
+  border-left: 3px solid rgba(16,38,52,.35);
+  background: rgba(16,38,52,.04);
+  padding: .85rem .9rem;
+  border-radius: 12px;
+  margin-top: .9rem;
+}
+.notice--danger {
+  border-left-color: rgba(163,65,56,.55);
+  background: rgba(163,65,56,.06);
+}
+.notice--danger strong { color: #a34138; }
+
+/* Print */
+@media print {
+  :root { --ink: #000; }
+  body { background: #fff !important; }
+  .site-header, .site-footer, .menu-toggle, .nav-links, .breadcrumb, .text-center.mt-lg, .toc-actions { display: none !important; }
+  .page-hero { padding: 0 !important; }
+  .page-hero .container { padding: 0 !important; }
+  .section { padding: 0 !important; }
+  .container { max-width: 100% !important; padding: 0 !important; }
+  .toc-wrap { border: 1px solid #ddd !important; background: #fff !important; }
+  .info-card { box-shadow: none !important; background: #fff !important; border: 1px solid #ddd !important; break-inside: avoid; }
+  a { color: #000 !important; text-decoration: none !important; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 10pt; }
+  .anchor-ico { display:none !important; }
+  h1, h2, h3 { color: #000 !important; }
+  p, li { color: #000 !important; }
 }
 </style>
 </head>
-<body>
 
+<body>
 <a class="skip-link" href="#main">Salta al contenuto</a>
 
 <header class="site-header" id="site-header">
@@ -83,99 +215,122 @@ hr.manuale-sep { border: none; border-top: 1px solid rgba(200,186,162,.35); marg
 
       <div class="manuale-content">
 
-        <div class="manuale-intro">
-          <h2>Il Manuale della Casa</h2>
-          <p>Informazioni essenziali per organizzare al meglio il soggiorno.</p>
-        </div>
-
-        <div class="m-block">
-          <div class="m-emoji" aria-hidden="true">🧳</div>
-          <h3>Check in</h3>
-          <p>Comunicate alla nostra host appena possibile l'orario di arrivo e comunque con molto anticipo, per potervi accogliere senza farvi attendere.</p>
-
-          <h3>Check out</h3>
-          <p>Il check out e alle ore 10, vi preghiamo di lasciare Villa Eliana in orario per consentire al personale delle pulizie di poterle effettuare. Se non saranno previsti arrivi nello stesso giorno della vostra partenza potrete concordare con la host un orario piu comodo. In ogni caso potrete lasciare nella villa i vostri bagagli chiusi per l'intera giornata.</p>
-        </div>
-
-        <div class="m-block">
-          <div class="m-emoji" aria-hidden="true">🌊</div>
-          <h3>Andare al mare</h3>
-          <p>Dalla villa si puo accedere direttamente al mare con pochi passi, scendete giu dritti verso il mare dal cancelletto in legno e seguite la stradina in discesa di fronte alla villa un poco a destra. Se volete un percorso piu agevole dopo il cancelletto seguite la strada sterrata a destra e dopo circa duecento metri, girate nella prima stradina a sinistra, lastricata in pietra, che scende verso il mare.</p>
-        </div>
-
-        <div class="m-block">
-          <div class="m-emoji" aria-hidden="true">🧼</div>
-          <h3>Pulizia e riassetto camere</h3>
-          <p>E prevista la pulizia dell'intera villa e il cambio lenzuola e della biancheria dei bagni, con cadenza settimanale. Potete concordare con la host l'orario della pulizia. Se avete bisogno di una pulizia e del cambio biancheria, piu frequente, anche giornaliera, potete contattare la nostra host ma il servizio e a pagamento.</p>
-        </div>
-
-        <div class="m-block m-note">
-          <div class="m-emoji" aria-hidden="true">♻️</div>
-          <h3>Ritiro dei rifiuti</h3>
-          <p><strong>La raccolta porta a porta</strong></p>
-          <p>A Villa Eliana e prevista la raccolta porta a porta di ogni singola tipologia di rifiuto, la mattina in determinati giorni della settimana, secondo il calendario che troverete in cucina. Bastera lasciare la mattina, prima delle 9,00, fuori dal cancello di entrata, il sacchetto del rifiuto che troverete sul calendario in cucina.</p>
-
-          <div class="m-block m-warning" style="margin: 1rem 0 0;">
-            <p><strong>IMPORTANTE</strong> Se non provvederete a smaltire giornalmente i rifiuti verranno trattenuti 150 euro dalla vostra cauzione.</p>
+        <!-- Indice (popolato via JS con gli H2) -->
+        <div class="toc-wrap" aria-label="Indice del manuale">
+          <div class="toc-title">
+            <h3>Indice</h3>
+            <div class="toc-actions">
+              <a href="#" id="toc-copy">Copia link sezione</a>
+              <a href="javascript:window.print()">Stampa</a>
+            </div>
           </div>
-
-          <p>Nel ripostiglio dietro la veranda dove c'e il barbeque troverete 5 contenitori:</p>
-          <ul>
-            <li>BIOLOGICO contenitore piccolo marrone</li>
-            <li>4 contenitori verdi contrassegnati da etichette</li>
-            <li>VETRO E LATTINE Sciacquare i residui di cibo da vetro e lattine e riporli nell'apposito contenitore</li>
-            <li>CARTA Sciacquare i residui di cibo da carta e cartone e metterli nell'apposito contenitore</li>
-            <li>PLASTICA Sciacquare i residui di cibo dai contenitori di plastica e metterli nell'apposito contenitore</li>
-            <li>INDIFFERENZIATA dove si mette tutto quanto non compreso negli altri rifiuti.</li>
-          </ul>
+          <ul class="toc-list" id="toc-list"></ul>
         </div>
 
-        <div class="m-block">
-          <div class="m-emoji" aria-hidden="true">✅</div>
-          <h3>Le nostre raccomandazioni</h3>
-          <ul>
-            <li>Non si possono fare pernottare nella villa persone non autorizzate e non precedentemente registrate e organizzare feste o ricevimenti.</li>
-            <li>Non si puo fumare all'interno di Villa Eliana, neache le sigarette elettroniche. E possibile fumare solo in veranda e all'esterno.</li>
-            <li>Vi consigliamo di non bere l'acqua del rubinetto perche Villa Eliana e dotata di una riserva idrica e l'acqua non e diretta.</li>
-            <li>Non gettate carta o altri oggetti nella toilette, cortesemente utilizzate il cestino dei rifiuti del bagno.</li>
-            <li>Vi preghiamo di parcheggiare non in prossimita dei muri perimetrali della villa per non danneggiare le sottostrutture idriche ed elettriche.</li>
-            <li>Quando uscite da Villa Eliana non lasciate porte o finestre aperte e chiudete i portelloni di legno per la sicurezza dei vostri beni. Ricordate di spegnere i condizionatori e le luci.</li>
-            <li>Se piove o minaccia di piovere riponete tutti i cuscini sotto la parte coperta della terrazza.</li>
-            <li>Dopo le 24,00 limitate i rumori.</li>
-          </ul>
+        <!-- H2 (inseriti dal testo) -->
+        <h2>Il Manuale della Casa</h2>
+        <p class="manuale-lead">Informazioni essenziali per organizzare al meglio il soggiorno.</p>
+
+        <!-- Cards: impaginazione, testo identico -->
+        <div class="card-grid">
+
+          <section class="info-card" aria-label="Check in">
+            <div class="microtitle">Organizzazione</div>
+            <h3>Check in</h3>
+            <p>Comunicate alla nostra host appena possibile l'orario di arrivo e comunque con molto anticipo, per potervi accogliere senza farvi attendere.</p>
+          </section>
+
+          <section class="info-card" aria-label="Check out">
+            <div class="microtitle">Partenza</div>
+            <h3>Check out</h3>
+            <p>Il check out e alle ore 10, vi preghiamo di lasciare Villa Eliana in orario per consentire al personale delle pulizie di poterle effettuare. Se non saranno previsti arrivi nello stesso giorno della vostra partenza potrete concordare con la host un orario piu comodo. In ogni caso potrete lasciare nella villa i vostri bagagli chiusi per l'intera giornata.</p>
+          </section>
+
+          <section class="info-card info-card--wide" aria-label="Andare al mare">
+            <div class="microtitle">Spiaggia</div>
+            <h3>Andare al mare</h3>
+            <p>Dalla villa si puo accedere direttamente al mare con pochi passi, scendete giu dritti verso il mare dal cancelletto in legno e seguite la stradina in discesa di fronte alla villa un poco a destra. Se volete un percorso piu agevole dopo il cancelletto seguite la strada sterrata a destra e dopo circa duecento metri, girate nella prima stradina a sinistra, lastricata in pietra, che scende verso il mare.</p>
+          </section>
+
+          <section class="info-card info-card--wide" aria-label="Pulizia e riassetto camere">
+            <div class="microtitle">Servizi</div>
+            <h3>Pulizia e riassetto camere</h3>
+            <p>E prevista la pulizia dell'intera villa e il cambio lenzuola e della biancheria dei bagni, con cadenza settimanale. Potete concordare con la host l'orario della pulizia. Se avete bisogno di una pulizia e del cambio biancheria, piu frequente, anche giornaliera, potete contattare la nostra host ma il servizio e a pagamento.</p>
+          </section>
+
+          <section class="info-card info-card--wide" aria-label="Ritiro dei rifiuti">
+            <div class="microtitle">Raccolta</div>
+            <h3>Ritiro dei rifiuti</h3>
+            <p><strong>La raccolta porta a porta</strong></p>
+            <p>A Villa Eliana e prevista la raccolta porta a porta di ogni singola tipologia di rifiuto, la mattina in determinati giorni della settimana, secondo il calendario che troverete in cucina. Bastera lasciare la mattina, prima delle 9,00, fuori dal cancello di entrata, il sacchetto del rifiuto che troverete sul calendario in cucina.</p>
+
+            <div class="notice notice--danger">
+              <p><strong>IMPORTANTE</strong> Se non provvederete a smaltire giornalmente i rifiuti verranno trattenuti 150 euro dalla vostra cauzione.</p>
+            </div>
+
+            <p>Nel ripostiglio dietro la veranda dove c'e il barbeque troverete 5 contenitori:</p>
+            <ul>
+              <li>BIOLOGICO contenitore piccolo marrone</li>
+              <li>4 contenitori verdi contrassegnati da etichette</li>
+              <li>VETRO E LATTINE Sciacquare i residui di cibo da vetro e lattine e riporli nell'apposito contenitore</li>
+              <li>CARTA Sciacquare i residui di cibo da carta e cartone e metterli nell'apposito contenitore</li>
+              <li>PLASTICA Sciacquare i residui di cibo dai contenitori di plastica e metterli nell'apposito contenitore</li>
+              <li>INDIFFERENZIATA dove si mette tutto quanto non compreso negli altri rifiuti.</li>
+            </ul>
+          </section>
+
+          <section class="info-card info-card--wide" aria-label="Le nostre raccomandazioni">
+            <div class="microtitle">Comportamento</div>
+            <h3>Le nostre raccomandazioni</h3>
+            <ul>
+              <li>Non si possono fare pernottare nella villa persone non autorizzate e non precedentemente registrate e organizzare feste o ricevimenti.</li>
+              <li>Non si puo fumare all'interno di Villa Eliana, neache le sigarette elettroniche. E possibile fumare solo in veranda e all'esterno.</li>
+              <li>Vi consigliamo di non bere l'acqua del rubinetto perche Villa Eliana e dotata di una riserva idrica e l'acqua non e diretta.</li>
+              <li>Non gettate carta o altri oggetti nella toilette, cortesemente utilizzate il cestino dei rifiuti del bagno.</li>
+              <li>Vi preghiamo di parcheggiare non in prossimita dei muri perimetrali della villa per non danneggiare le sottostrutture idriche ed elettriche.</li>
+              <li>Quando uscite da Villa Eliana non lasciate porte o finestre aperte e chiudete i portelloni di legno per la sicurezza dei vostri beni. Ricordate di spegnere i condizionatori e le luci.</li>
+              <li>Se piove o minaccia di piovere riponete tutti i cuscini sotto la parte coperta della terrazza.</li>
+              <li>Dopo le 24,00 limitate i rumori.</li>
+            </ul>
+          </section>
+
         </div>
 
         <h2>Regole Generali</h2>
-        <p>Indicazioni utili per un soggiorno sereno e rispettoso degli spazi.</p>
+        <p class="manuale-lead">Indicazioni utili per un soggiorno sereno e rispettoso degli spazi.</p>
 
-        <div class="m-block">
-          <div class="m-emoji" aria-hidden="true">⏰</div>
-          <h3>Orari</h3>
-          <ul>
-            <li>Check-in: dalle 16:00 alle 20:00</li>
-            <li>Check-out: entro le 10:00</li>
-          </ul>
-        </div>
+        <div class="card-grid">
 
-        <div class="m-block">
-          <div class="m-emoji" aria-hidden="true">👥</div>
-          <h3>Ospiti</h3>
-          <ul>
-            <li>Massimo 11 ospiti</li>
-            <li>Registrazione obbligatoria per tutti</li>
-            <li>Vietato fumare in casa</li>
-            <li>Animali ammessi</li>
-          </ul>
-        </div>
+          <section class="info-card" aria-label="Orari">
+            <div class="microtitle">Orari</div>
+            <h3>Orari</h3>
+            <ul>
+              <li>Check-in: dalle 16:00 alle 20:00</li>
+              <li>Check-out: entro le 10:00</li>
+            </ul>
+          </section>
 
-        <div class="m-block">
-          <div class="m-emoji" aria-hidden="true">🔒</div>
-          <h3>Sicurezza</h3>
-          <ul>
-            <li>Chiudere sempre porte e finestre</li>
-            <li>Non lasciare oggetti di valore in vista</li>
-            <li>Segnalare eventuali problemi</li>
-          </ul>
+          <section class="info-card" aria-label="Ospiti">
+            <div class="microtitle">Ospiti</div>
+            <h3>Ospiti</h3>
+            <ul>
+              <li>Massimo 11 ospiti</li>
+              <li>Registrazione obbligatoria per tutti</li>
+              <li>Vietato fumare in casa</li>
+              <li>Animali ammessi</li>
+            </ul>
+          </section>
+
+          <section class="info-card info-card--wide" aria-label="Sicurezza">
+            <div class="microtitle">Sicurezza</div>
+            <h3>Sicurezza</h3>
+            <ul>
+              <li>Chiudere sempre porte e finestre</li>
+              <li>Non lasciare oggetti di valore in vista</li>
+              <li>Segnalare eventuali problemi</li>
+            </ul>
+          </section>
+
         </div>
 
       </div>
@@ -184,6 +339,7 @@ hr.manuale-sep { border: none; border-top: 1px solid rgba(200,186,162,.35); marg
         <p style="color:var(--ink-soft);margin-bottom:1.5rem">Hai domande sulle regole o gli spazi della villa?</p>
         <a href="contatti.html" class="btn btn--primary">Contattaci</a>
       </div>
+
     </div>
   </div>
 </main>
@@ -240,5 +396,97 @@ hr.manuale-sep { border: none; border-top: 1px solid rgba(200,186,162,.35); marg
 </footer>
 
 <script src="js/main.js"></script>
+
+<script>
+/* =========================================================
+   TOC + Anchor automatici sugli H2
+   - genera slug
+   - rende l'H2 cliccabile
+   - popola l'indice
+   ========================================================= */
+(function() {
+  const tocList = document.getElementById('toc-list');
+  if (!tocList) return;
+
+  const h2s = Array.from(document.querySelectorAll('.manuale-content h2'));
+  const used = new Set();
+
+  function slugify(str) {
+    return str
+      .toLowerCase()
+      .trim()
+      .replace(/[’'"]/g, '')
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-');
+  }
+
+  function uniqueId(base) {
+    let id = base || 'sezione';
+    let i = 2;
+    while (used.has(id) || document.getElementById(id)) {
+      id = base + '-' + i;
+      i++;
+    }
+    used.add(id);
+    return id;
+  }
+
+  // SVG icona link (minimal, luxury)
+  const iconSvg = `
+    <svg class="anchor-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M10 13a5 5 0 0 1 0-7l1.5-1.5a5 5 0 0 1 7 7L17 13"/>
+      <path d="M14 11a5 5 0 0 1 0 7L12.5 19.5a5 5 0 0 1-7-7L7 11"/>
+    </svg>
+  `;
+
+  h2s.forEach(h2 => {
+    const text = h2.textContent.trim();
+    const base = slugify(text);
+    const id = uniqueId(base);
+    h2.id = id;
+
+    // Rende H2 cliccabile
+    const link = document.createElement('a');
+    link.href = '#' + id;
+    link.className = 'h2-link';
+    link.setAttribute('aria-label', text);
+
+    // Sposta contenuto di H2 dentro link
+    const span = document.createElement('span');
+    span.textContent = text;
+
+    h2.textContent = '';
+    link.appendChild(span);
+    link.insertAdjacentHTML('beforeend', iconSvg);
+    h2.appendChild(link);
+
+    // Popola indice
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = '#' + id;
+    a.textContent = text;
+    li.appendChild(a);
+    tocList.appendChild(li);
+  });
+
+  // Copia link della sezione corrente (quando sei dentro una sezione)
+  const copyBtn = document.getElementById('toc-copy');
+  if (copyBtn && navigator.clipboard) {
+    copyBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const hash = location.hash || ('#' + (h2s[0] ? h2s[0].id : ''));
+      const url = location.origin + location.pathname + hash;
+      navigator.clipboard.writeText(url).then(() => {
+        copyBtn.textContent = 'Copiato';
+        setTimeout(() => copyBtn.textContent = 'Copia link sezione', 1200);
+      });
+    });
+  } else if (copyBtn) {
+    copyBtn.style.display = 'none';
+  }
+})();
+</script>
+
 </body>
 </html>
