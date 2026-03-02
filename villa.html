@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Villa &mdash; Villa Eliana sul Mare</title>
+<meta name="description" content="Scopri Villa Eliana sul Mare: piscina privata, accesso diretto alla spiaggia, ampi spazi interni ed esterni a Porto Pino, Sardegna.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.villa-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; margin-bottom: 6rem; }
+.villa-intro.reverse { direction: rtl; }
+.villa-intro.reverse > * { direction: ltr; }
+@media(max-width:768px) { .villa-intro,.villa-intro.reverse { grid-template-columns:1fr; direction:ltr; gap:2.5rem; } }
+.villa-img { overflow: hidden; }
+.villa-img-ph { display: flex; align-items: center; justify-content: center; font-size: .68rem; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,.28); }
+.villa-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+.villa-img:hover img { transform: scale(1.03); }
+.villa-text h2 { font-family: var(--display); font-size: clamp(1.8rem,3.5vw,2.6rem); color: var(--sea-deep); margin-bottom: 1rem; font-weight: 400; }
+.villa-text p { color: var(--ink-soft); margin-bottom: 1rem; }
+.specs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--stone); margin: 5rem 0; }
+.spec { background: var(--mist); padding: 2.5rem 1.5rem; text-align: center; }
+.spec-num { font-family: var(--display); font-size: 3rem; color: var(--gold); line-height: 1; margin-bottom: .25rem; }
+.spec-label { font-size: .72rem; font-weight: 500; letter-spacing: .15em; text-transform: uppercase; color: var(--ink-soft); }
+@media(max-width:600px) { .specs { grid-template-columns:1fr 1fr; } }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Salta al contenuto</a>
+
+<header class="site-header" id="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">Villa Eliana sul Mare<sub>Porto Pino &middot; Sardegna</sub></a>
+      <button class="menu-toggle" id="menu-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Apri menu"><span></span><span></span><span></span></button>
+      <nav class="nav-links" id="nav-links" aria-label="Menu principale">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="villa.html" class="nav-link active">La Villa</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="prezzi.html" class="nav-link">Prezzi</a>
+        <a href="manuale.html" class="nav-link">Manuale</a>
+        <a href="contatti.html" class="nav-link btn btn--ghost nav-cta">Richiedi disponibilita</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Porto Pino, Sardegna</span>
+      <h1>La Villa</h1>
+      <p>Una dimora esclusiva affacciata sul mare pi&ugrave; bello della Sardegna del Sud.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Percorso di navigazione"><ol><li><a href="index.html">Home</a></li><li>La Villa</li></ol></nav>
+
+      <!-- Spec numbers -->
+      <div class="specs">
+        <div class="spec reveal"><div class="spec-num">4</div><div class="spec-label">Camere da letto</div></div>
+        <div class="spec reveal"><div class="spec-num">8</div><div class="spec-label">Posti letto</div></div>
+        <div class="spec reveal"><div class="spec-num">1</div><div class="spec-label">Piscina privata</div></div>
+        <div class="spec reveal"><div class="spec-num">0 m</div><div class="spec-label">Dal mare</div></div>
+      </div>
+
+      <!-- Block 1: Esterni -->
+      <div class="villa-intro">
+        <div class="villa-img reveal">
+          <div class="villa-img-ph" style="background:linear-gradient(135deg,#1e4a5c,#3a6e82);aspect-ratio:4/3;min-height:360px">Foto esterni &amp; piscina</div>
+        </div>
+        <div class="villa-text reveal">
+          <span class="eyebrow">Gli esterni</span>
+          <h2>Piscina, terrazza e accesso al mare</h2>
+          <div class="divider divider--l"></div>
+          <p>La villa dispone di una piscina privata con area solarium, ampi terrazzi panoramici con vista sul mare e accesso diretto alla spiaggia di Porto Pino.</p>
+          <p>Il giardino &egrave; curato e attrezzato con zona pranzo esterna, barbecue e lettini per godersi le giornate di sole nella massima privacy.</p>
+          <a href="gallery.html" class="btn btn--outline">Vedi gallery</a>
+        </div>
+      </div>
+
+      <!-- Block 2: Interni -->
+      <div class="villa-intro reverse">
+        <div class="villa-img reveal">
+          <div class="villa-img-ph" style="background:linear-gradient(135deg,#8c7b6b,#c8baa2);aspect-ratio:4/3;min-height:360px">Foto interni</div>
+        </div>
+        <div class="villa-text reveal">
+          <span class="eyebrow">Gli interni</span>
+          <h2>Ambienti luminosi e raffinati</h2>
+          <div class="divider divider--l"></div>
+          <p>L'interno della villa &egrave; arredato con gusto mediterraneo contemporaneo: ampio soggiorno con vista mare, cucina completamente attrezzata, 4 camere da letto e bagni di design.</p>
+          <p>Ogni ambiente &egrave; climatizzato e pensato per garantire comfort e riservatezza durante tutto il soggiorno.</p>
+        </div>
+      </div>
+
+      <!-- Block 3: Camere -->
+      <div class="villa-intro">
+        <div class="villa-img reveal">
+          <div class="villa-img-ph" style="background:linear-gradient(135deg,#2a5f72,#6fa9bc);aspect-ratio:4/3;min-height:360px">Foto camera</div>
+        </div>
+        <div class="villa-text reveal">
+          <span class="eyebrow">Le camere</span>
+          <h2>4 camere per fino a 8 ospiti</h2>
+          <div class="divider divider--l"></div>
+          <p>La villa dispone di 4 camere da letto — tra cui camere matrimoniali e doppie — con bagni privati o condivisi, aria condizionata e biancheria di qualit&agrave;.</p>
+          <p>La disposizione degli spazi garantisce privacy per ogni coppia o gruppo di ospiti.</p>
+          <a href="prezzi.html" class="btn btn--outline">Vedi tariffe</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section style="background:linear-gradient(135deg,var(--sea-deep) 0%,var(--sea) 100%);text-align:center;padding:7rem 0" aria-labelledby="cta-h">
+    <div class="container">
+      <span class="eyebrow" style="color:var(--gold-light)">Prenota il tuo soggiorno</span>
+      <h2 id="cta-h" style="font-family:var(--display);color:var(--sand);font-size:clamp(2rem,4vw,3rem);font-weight:400;margin-bottom:1rem">Pronto per vivere Villa Eliana?</h2>
+      <p style="color:rgba(245,240,232,.72);max-width:480px;margin:0 auto 2.5rem">Verifica la disponibilit&agrave; e ricevi un preventivo entro 24 ore.</p>
+      <a href="contatti.html" class="btn btn--gold">Richiedi disponibilit&agrave;</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="index.html" class="footer-logo">Villa Eliana sul Mare<sub>Porto Pino &middot; Sardegna</sub></a><p>Una dimora esclusiva affacciata sul mare cristallino di Porto Pino.</p><div class="footer-social"><a href="#" class="social-a" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a></div></div>
+      <div class="footer-col"><h5>La Villa</h5><nav class="footer-links"><a href="villa.html">La Villa</a><a href="gallery.html">Gallery</a><a href="prezzi.html">Prezzi e Servizi</a><a href="manuale.html">Manuale della Casa</a><a href="contatti.html">Richiedi disponibilit&agrave;</a></nav></div>
+      <div class="footer-col"><h5>Porto Pino</h5><nav class="footer-links"><a href="#">Spiagge e Natura</a><a href="#">Come arrivare</a></nav></div>
+      <div class="footer-col"><h5>Contatti</h5><div class="footer-links"><div class="footer-contact-row"><a href="tel:+39000000000">+39 000 000 0000</a></div><div class="footer-contact-row"><a href="mailto:info@villaelianasulmare.it">info@villaelianasulmare.it</a></div></div></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2025 Villa Eliana sul Mare</span><div class="footer-policy"><a href="#">Privacy Policy</a><a href="#">Cookie Policy</a></div></div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

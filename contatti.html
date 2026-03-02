@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contatti &mdash; Villa Eliana sul Mare</title>
+<meta name="description" content="Richiedi disponibilita per Villa Eliana sul Mare a Porto Pino, Sardegna. Risponderemo entro 24 ore.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+@media(max-width:768px) { .contact-grid { grid-template-columns:1fr; gap:3rem; } }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media(max-width:560px) { .form-grid { grid-template-columns:1fr; } }
+.form-group { display: flex; flex-direction: column; gap: .4rem; }
+.form-group--full { grid-column: 1/-1; }
+.form-label { font-size: .7rem; font-weight: 500; letter-spacing: .15em; text-transform: uppercase; color: var(--ink-soft); }
+.form-input,.form-textarea,.form-select { padding: .85rem 1.1rem; border: 1px solid var(--stone); background: var(--white); color: var(--ink); font-size: .95rem; border-radius: 0; transition: border-color .3s, box-shadow .3s; font-family: var(--body); appearance: none; }
+.form-input:focus,.form-textarea:focus,.form-select:focus { outline: none; border-color: var(--sea); box-shadow: 0 0 0 3px rgba(58,110,130,.12); }
+.form-textarea { min-height: 130px; resize: vertical; }
+.form-notice { font-size: .75rem; color: var(--ink-soft); margin-top: .75rem; line-height: 1.55; }
+.contact-info-block { background: var(--sand); padding: 2.5rem; border-top: 3px solid var(--gold); margin-top: 2rem; }
+.contact-info-block h3 { font-family: var(--display); font-size: 1.3rem; color: var(--sea-deep); margin-bottom: 1rem; }
+.contact-info-block p { color: var(--ink-soft); font-size: .92rem; line-height: 1.75; }
+.info-row { display: flex; gap: .75rem; align-items: flex-start; margin-bottom: 1rem; font-size: .92rem; color: var(--ink-soft); }
+.info-row svg { flex-shrink: 0; margin-top: 2px; opacity: .6; }
+.info-row a { color: var(--sea); transition: color .3s; }
+.info-row a:hover { color: var(--sea-deep); }
+.form-msg { padding: 1rem 1.25rem; margin-bottom: 1.25rem; font-size: .9rem; display: none; }
+.form-msg--success { background: rgba(58,110,130,.1); border: 1px solid var(--sea-light); color: var(--sea-deep); }
+.form-msg--error { background: rgba(180,60,60,.08); border: 1px solid rgba(180,60,60,.3); color: #7b2c2c; }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Salta al contenuto</a>
+
+<header class="site-header" id="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">Villa Eliana sul Mare<sub>Porto Pino &middot; Sardegna</sub></a>
+      <button class="menu-toggle" id="menu-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Apri menu"><span></span><span></span><span></span></button>
+      <nav class="nav-links" id="nav-links" aria-label="Menu principale">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="villa.html" class="nav-link">La Villa</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="prezzi.html" class="nav-link">Prezzi</a>
+        <a href="manuale.html" class="nav-link">Manuale</a>
+        <a href="contatti.html" class="nav-link active btn btn--ghost nav-cta">Richiedi disponibilita</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <div class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Disponibilit&agrave; &amp; Prenotazioni</span>
+      <h1>Contatti</h1>
+      <p>Scrivi per verificare la disponibilit&agrave; nelle date che preferisci. Risponderemo entro 24 ore.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Percorso di navigazione"><ol><li><a href="index.html">Home</a></li><li>Contatti</li></ol></nav>
+
+      <div class="contact-grid">
+
+        <!-- FORM -->
+        <div>
+          <span class="eyebrow">Richiesta disponibilit&agrave;</span>
+          <h2 style="font-family:var(--display);font-size:clamp(1.6rem,3vw,2.2rem);color:var(--sea-deep);margin-bottom:.5rem;font-weight:400">Pianifica il tuo soggiorno</h2>
+          <div class="divider divider--l" style="margin-bottom:2rem"></div>
+
+          <div class="form-msg" id="form-msg" role="alert" aria-live="polite"></div>
+
+          <form id="contact-form" novalidate>
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="nome">Nome e Cognome *</label>
+                <input type="text" id="nome" name="nome" class="form-input" required autocomplete="name" placeholder="Mario Rossi">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">Email *</label>
+                <input type="email" id="email" name="email" class="form-input" required autocomplete="email" placeholder="mario@esempio.it">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="telefono">Telefono</label>
+                <input type="tel" id="telefono" name="telefono" class="form-input" autocomplete="tel" placeholder="+39 320 000 0000">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="ospiti">N. ospiti</label>
+                <select id="ospiti" name="ospiti" class="form-select">
+                  <option value="1">1 ospite</option><option value="2">2 ospiti</option><option value="3">3 ospiti</option><option value="4">4 ospiti</option><option value="5">5 ospiti</option><option value="6">6 ospiti</option><option value="7">7 ospiti</option><option value="8">8 ospiti</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="arrivo">Data arrivo</label>
+                <input type="date" id="arrivo" name="arrivo" class="form-input">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="partenza">Data partenza</label>
+                <input type="date" id="partenza" name="partenza" class="form-input">
+              </div>
+              <div class="form-group form-group--full">
+                <label class="form-label" for="messaggio">Messaggio</label>
+                <textarea id="messaggio" name="messaggio" class="form-textarea" placeholder="Richieste particolari, domande, informazioni..."></textarea>
+              </div>
+              <div class="form-group form-group--full">
+                <button type="submit" class="btn btn--gold" id="submit-btn">Invia richiesta</button>
+                <p class="form-notice">I campi contrassegnati con * sono obbligatori. I tuoi dati sono trattati in conformit&agrave; alla nostra <a href="#" style="color:var(--sea)">Privacy Policy</a> e non saranno condivisi con terzi.</p>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- INFO -->
+        <div>
+          <span class="eyebrow">Dove siamo</span>
+          <h2 style="font-family:var(--display);font-size:clamp(1.6rem,3vw,2.2rem);color:var(--sea-deep);margin-bottom:.5rem;font-weight:400">Come raggiungerci</h2>
+          <div class="divider divider--l" style="margin-bottom:2rem"></div>
+
+          <div class="info-row"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div><strong style="display:block;color:var(--ink);margin-bottom:2px">Posizione</strong>Porto Pino, Sant'Anna Arresi (CI), Sardegna</div></div>
+          <div class="info-row"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.92 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><div><strong style="display:block;color:var(--ink);margin-bottom:2px">Telefono</strong><a href="tel:+39000000000">+39 000 000 0000</a></div></div>
+          <div class="info-row"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><div><strong style="display:block;color:var(--ink);margin-bottom:2px">Email</strong><a href="mailto:info@villaelianasulmare.it">info@villaelianasulmare.it</a></div></div>
+
+          <div class="contact-info-block">
+            <h3>Come arrivare</h3>
+            <p>Porto Pino si trova a circa 60&nbsp;km dall'aeroporto di Cagliari (CAG). Si consiglia l'auto a noleggio per maggiore flessibilit&agrave;. Le indicazioni dettagliate per raggiungere la villa saranno incluse nella conferma di prenotazione.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="index.html" class="footer-logo">Villa Eliana sul Mare<sub>Porto Pino &middot; Sardegna</sub></a><p>Una dimora esclusiva affacciata sul mare cristallino di Porto Pino.</p><div class="footer-social"><a href="#" class="social-a" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a><a href="#" class="social-a" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></div></div>
+      <div class="footer-col"><h5>La Villa</h5><nav class="footer-links"><a href="villa.html">La Villa</a><a href="gallery.html">Gallery</a><a href="prezzi.html">Prezzi e Servizi</a><a href="manuale.html">Manuale della Casa</a></nav></div>
+      <div class="footer-col"><h5>Porto Pino</h5><nav class="footer-links"><a href="#">Spiagge e Natura</a><a href="#">Come arrivare</a></nav></div>
+      <div class="footer-col"><h5>Contatti</h5><div class="footer-links"><div class="footer-contact-row"><a href="tel:+39000000000">+39 000 000 0000</a></div><div class="footer-contact-row"><a href="mailto:info@villaelianasulmare.it">info@villaelianasulmare.it</a></div></div></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2025 Villa Eliana sul Mare &mdash; Tutti i diritti riservati</span><div class="footer-policy"><a href="#">Privacy Policy</a><a href="#">Cookie Policy</a></div></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+// Static preview form — shows a success message
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const msg = document.getElementById('form-msg');
+  const nome = document.getElementById('nome').value.trim();
+  const email = document.getElementById('email').value.trim();
+  if (!nome || !email || !email.includes('@')) {
+    msg.className = 'form-msg form-msg--error';
+    msg.textContent = 'Compila nome e un indirizzo email valido.';
+    msg.style.display = 'block';
+    return;
+  }
+  msg.className = 'form-msg form-msg--success';
+  msg.textContent = 'Grazie ' + nome + '! (Anteprima statica — in produzione il messaggio viene inviato via email.)';
+  msg.style.display = 'block';
+  msg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  this.reset();
+});
+</script>
+</body>
+</html>
