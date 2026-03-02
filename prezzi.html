@@ -3,39 +3,175 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Prezzi e Servizi &mdash; Villa Eliana sul Mare</title>
-<meta name="description" content="Tariffe e servizi di Villa Eliana sul Mare a Porto Pino, Sardegna.">
+<title>Prezzi &mdash; Villa Eliana sul Mare</title>
+<meta name="description" content="Prezzi di Villa Eliana sul Mare a Porto Pino, Sardegna. Soggiorno minimo 7 notti. Condizioni e servizi inclusi.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<style>
-.prezzi-content { max-width: 860px; margin-inline: auto; }
-.prezzi-content h2 { font-family: var(--display); font-size: clamp(1.5rem,3vw,2rem); color: var(--sea-deep); margin-top: 4rem; margin-bottom: 1rem; padding-top: 2rem; border-top: 1px solid rgba(200,186,162,.4); font-weight: 400; }
-.prezzi-content h2:first-child { margin-top: 0; border-top: none; padding-top: 0; }
-.prezzi-content h3 { font-family: var(--display); font-size: 1.35rem; color: var(--sea); margin-top: 2rem; margin-bottom: .5rem; font-weight: 400; }
-.prezzi-content p { color: var(--ink-soft); line-height: 1.8; }
-.prezzi-content ul, .prezzi-content ol { padding-left: 1.5rem; margin-bottom: 1.2em; }
-.prezzi-content ul li { list-style: disc; color: var(--ink-soft); margin-bottom: .4em; line-height: 1.75; }
-.prezzi-content ol li { list-style: decimal; color: var(--ink-soft); margin-bottom: .4em; line-height: 1.75; }
-.prezzi-content strong { color: var(--ink); }
-.prezzi-content a { color: var(--sea); text-decoration: underline; text-underline-offset: 3px; }
-.cta-box { background: var(--sand); padding: 2.5rem; margin-top: 4rem; border-left: 3px solid var(--gold); }
-.cta-box p { font-family: var(--display); font-size: 1.2rem; color: var(--sea-deep); margin-bottom: 1rem; font-style: italic; }
-.cta-box small { display: block; color: var(--ink-soft); font-size: .9rem; margin-bottom: 1.5rem; font-family: var(--body); }
 
-/* Pricing blocks (lightweight, matches palette) */
-.price-block { background: rgba(243,238,228,.55); border: 1px solid rgba(200,186,162,.45); padding: 1.8rem 1.6rem; margin: 1.25rem 0; }
-.price-title { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .75rem; margin-bottom: .75rem; }
-.price-title h3 { margin: 0; }
-.price-amount { font-family: var(--display); color: var(--sea-deep); font-size: 1.35rem; font-weight: 400; }
-.price-cta { margin-top: 1rem; }
-.note-box { background: var(--sand); border-left: 3px solid var(--gold); padding: 1.4rem 1.6rem; margin-top: 2rem; }
-.note-box h3 { margin-top: 0; }
+<style>
+/* Layout */
+.prezzi-content { max-width: 980px; margin-inline: auto; }
+.prezzi-lead { max-width: 860px; }
+
+.prezzi-content h2{
+  font-family: var(--display);
+  font-size: clamp(1.55rem,3vw,2.05rem);
+  color: var(--sea-deep);
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(200,186,162,.4);
+  font-weight: 400;
+  position: relative;
+}
+.prezzi-content h2:first-child { margin-top: 0; border-top: none; padding-top: 0; }
+
+.prezzi-content h3{
+  font-family: var(--display);
+  font-size: 1.2rem;
+  color: var(--sea-deep);
+  margin: 0 0 .5rem;
+  font-weight: 400;
+  letter-spacing: .01em;
+}
+.prezzi-content p { color: var(--ink-soft); line-height: 1.85; margin: .6rem 0; }
+.prezzi-content ul { padding-left: 1.25rem; margin: .6rem 0 1.1rem; }
+.prezzi-content ul li { list-style: disc; color: var(--ink-soft); margin-bottom: .4em; line-height: 1.75; }
+.prezzi-content strong { color: var(--ink); }
+
+/* TOC */
+.toc-wrap{
+  margin: 1.5rem 0 2.25rem;
+  border: 1px solid rgba(200,186,162,.45);
+  background: rgba(245,240,232,.55);
+  border-radius: 18px;
+  padding: 1.25rem 1.25rem 1rem;
+}
+.toc-title{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:1rem; margin-bottom:.75rem;
+}
+.toc-title h3{ margin:0; font-size:1.05rem; }
+.toc-actions{ display:flex; gap:.5rem; align-items:center; }
+.toc-actions a{
+  font-size:.85rem; color:var(--sea-deep); text-decoration:none;
+  border:1px solid rgba(16,38,52,.18);
+  background: rgba(255,255,255,.55);
+  padding:.45rem .65rem;
+  border-radius:999px;
+}
+.toc-actions a:hover{ background: rgba(255,255,255,.8); }
+.toc-list{
+  display:grid; grid-template-columns:1fr; gap:.4rem;
+  padding:0; margin:0; list-style:none;
+}
+.toc-list a{
+  display:block; text-decoration:none; color:var(--ink);
+  padding:.55rem .75rem; border-radius:12px;
+  border:1px solid transparent;
+}
+.toc-list a:hover{
+  border-color: rgba(200,186,162,.55);
+  background: rgba(255,255,255,.45);
+}
+@media (min-width:860px){ .toc-list{ grid-template-columns:1fr 1fr; } }
+
+/* H2 cliccabili */
+.h2-link{
+  display:inline-flex; align-items:center; gap:.5rem;
+  color:inherit; text-decoration:none;
+}
+.h2-link:hover{ text-decoration:underline; text-underline-offset:4px; }
+.h2-link .anchor-ico{
+  width:16px; height:16px; opacity:.55; transform:translateY(1px);
+}
+.h2-link:hover .anchor-ico{ opacity:.85; }
+
+/* Cards prezzi */
+.price-grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+@media (min-width: 900px){
+  .price-grid{ grid-template-columns: 1fr 1fr 1fr; }
+}
+
+.price-card{
+  background: rgba(255,255,255,.7);
+  border: 1px solid rgba(200,186,162,.55);
+  border-radius: 18px;
+  padding: 1.15rem 1.15rem 1.1rem;
+  box-shadow: 0 10px 24px rgba(16,38,52,.06);
+  display:flex;
+  flex-direction:column;
+  gap:.75rem;
+}
+.price-card .season{
+  font-size:.8rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color: rgba(16,38,52,.65);
+  font-weight:500;
+}
+.price-card .price{
+  font-family: var(--display);
+  font-size: 2rem;
+  color: var(--sea-deep);
+  line-height: 1.05;
+}
+.price-card .price small{
+  font-family: var(--body);
+  font-size: .9rem;
+  color: rgba(16,38,52,.65);
+}
+.price-card ul{ margin: 0; }
+.price-card ul li{ list-style: disc; }
+.price-card .cta{
+  margin-top:auto;
+  display:flex;
+  gap:.75rem;
+  align-items:center;
+  justify-content:flex-start;
+}
+
+/* Note / condizioni */
+.note-card{
+  background: rgba(16,38,52,.04);
+  border: 1px solid rgba(16,38,52,.12);
+  border-radius: 18px;
+  padding: 1.1rem 1.15rem;
+  margin-top: 1.25rem;
+}
+.note-card h3{ margin: 0 0 .35rem; }
+.note-list{
+  margin: .6rem 0 0;
+  padding-left: 1.25rem;
+}
+.note-list li{ margin-bottom:.35rem; }
+
+/* Print */
+@media print{
+  :root { --ink:#000; }
+  body{ background:#fff !important; }
+  .site-header, .site-footer, .menu-toggle, .nav-links, .breadcrumb, .toc-actions, .btn { display:none !important; }
+  .page-hero{ padding:0 !important; }
+  .page-hero .container{ padding:0 !important; }
+  .section{ padding:0 !important; }
+  .container{ max-width:100% !important; padding:0 !important; }
+  .toc-wrap{ border:1px solid #ddd !important; background:#fff !important; }
+  .price-card, .note-card{ box-shadow:none !important; background:#fff !important; border:1px solid #ddd !important; break-inside:avoid; }
+  a{ color:#000 !important; text-decoration:none !important; }
+  .anchor-ico{ display:none !important; }
+  h1,h2,h3,p,li{ color:#000 !important; }
+}
 </style>
 </head>
-<body>
 
+<body>
 <a class="skip-link" href="#main">Salta al contenuto</a>
 
 <header class="site-header" id="site-header">
@@ -58,9 +194,9 @@
 <main id="main">
   <div class="page-hero">
     <div class="container">
-      <span class="eyebrow">Tariffe &amp; disponibilit&agrave;</span>
-      <h1>Prezzi e Servizi</h1>
-      <p>Tutto ci&ograve; che devi sapere per pianificare il tuo soggiorno a Villa Eliana.</p>
+      <span class="eyebrow">Tariffe e condizioni</span>
+      <h1>Prezzi</h1>
+      <p>Prezzi per soggiorno minimo di 7 notti.</p>
     </div>
   </div>
 
@@ -69,93 +205,88 @@
       <nav class="breadcrumb" aria-label="Percorso di navigazione">
         <ol>
           <li><a href="index.html">Home</a></li>
-          <li>Prezzi e Servizi</li>
+          <li>Prezzi</li>
         </ol>
       </nav>
 
       <div class="prezzi-content">
 
-        <!-- =====================================================
-             ZONA TESTI INTOCCABILI
-             Contenuto ESATTO inserito come richiesto
-             ===================================================== -->
+        <!-- Indice -->
+        <div class="toc-wrap" aria-label="Indice della pagina prezzi">
+          <div class="toc-title">
+            <h3>Indice</h3>
+            <div class="toc-actions">
+              <a href="#" id="toc-copy">Copia link sezione</a>
+              <a href="javascript:window.print()">Stampa</a>
+            </div>
+          </div>
+          <ul class="toc-list" id="toc-list"></ul>
+        </div>
 
         <h2>Villa di Lusso Villa Eliana Porto Pino - Sardegna</h2>
-        <p><strong>Prezzi per soggiorno minimo di 7 notti.</strong></p>
+        <p class="prezzi-lead">Prezzi per soggiorno minimo di 7 notti.</p>
 
-        <div class="price-block">
-          <div class="price-title">
-            <h3>Aprile - Maggio - Ottobre</h3>
-            <div class="price-amount">&euro;3.500 / per settimana</div>
-          </div>
-          <ul>
-            <li>Pulizia una volta a settimana</li>
-            <li>Servizio di benvenuto</li>
-            <li>Kit di cortesia</li>
-            <li>Informazioni turistiche</li>
-          </ul>
-          <div class="price-cta">
-            <a href="contatti.html" class="btn btn--gold">Prenota Ora</a>
-          </div>
+        <div class="price-grid" aria-label="Tariffe settimanali">
+          <article class="price-card">
+            <div class="season">Aprile - Maggio - Ottobre</div>
+            <div class="price">€3.500 <small>/ per settimana</small></div>
+            <ul>
+              <li>Pulizia una volta a settimana</li>
+              <li>Servizio di benvenuto</li>
+              <li>Kit di cortesia</li>
+              <li>Informazioni turistiche</li>
+            </ul>
+            <div class="cta">
+              <a href="contatti.html" class="btn btn--primary">Prenota Ora</a>
+            </div>
+          </article>
+
+          <article class="price-card">
+            <div class="season">Giugno - Settembre</div>
+            <div class="price">€4.000 <small>/ per settimana</small></div>
+            <ul>
+              <li>Pulizia una volta a settimana</li>
+              <li>Servizio di benvenuto</li>
+              <li>Kit di cortesia</li>
+              <li>Informazioni turistiche</li>
+            </ul>
+            <div class="cta">
+              <a href="contatti.html" class="btn btn--primary">Prenota Ora</a>
+            </div>
+          </article>
+
+          <article class="price-card">
+            <div class="season">Luglio - Agosto</div>
+            <div class="price">€7.000 <small>/ per settimana</small></div>
+            <ul>
+              <li>Kit di cortesia</li>
+              <li>Pulizia una volta a settimana</li>
+              <li>Servizio di benvenuto</li>
+              <li>Informazioni turistiche</li>
+            </ul>
+            <div class="cta">
+              <a href="contatti.html" class="btn btn--primary">Prenota Ora</a>
+            </div>
+          </article>
         </div>
 
-        <div class="price-block">
-          <div class="price-title">
-            <h3>Giugno - Settembre</h3>
-            <div class="price-amount">&euro;4.000 / per settimana</div>
-          </div>
-          <ul>
-            <li>Pulizia una volta a settimana</li>
-            <li>Servizio di benvenuto</li>
-            <li>Kit di cortesia</li>
-            <li>Informazioni turistiche</li>
+        <h2>Nota</h2>
+        <div class="note-card">
+          <h3>Condizioni soggiorno</h3>
+          <ul class="note-list">
+            <li>Soggiorno minimo: 7 notti durante tutto l'anno.</li>
+            <li>Caparra: si richiede una cauzione del 50% da versare via bonifico bancario al momento della conferma della prenotazione.</li>
+            <li>Pulizie: quota una tantum di 200 €</li>
           </ul>
-          <div class="price-cta">
-            <a href="contatti.html" class="btn btn--gold">Prenota Ora</a>
-          </div>
-        </div>
-
-        <div class="price-block">
-          <div class="price-title">
-            <h3>Luglio - Agosto</h3>
-            <div class="price-amount">&euro;7.000 / per settimana</div>
-          </div>
-          <ul>
-            <li>Kit di cortesia</li>
-            <li>Pulizia una volta a settimana</li>
-            <li>Servizio di benvenuto</li>
-            <li>Informazioni turistiche</li>
-          </ul>
-          <div class="price-cta">
-            <a href="contatti.html" class="btn btn--gold">Prenota Ora</a>
-          </div>
-        </div>
-
-        <div class="note-box">
-          <h3>📝Nota</h3>
-
-          <p><strong>Condizioni soggiorno</strong></p>
-
-          <p><strong>Soggiorno minimo:</strong> 7 notti durante tutto l'anno.</p>
-
-          <p><strong>Caparra:</strong> si richiede una cauzione del 50% da versare via bonifico bancario al momento della conferma della prenotazione.</p>
-
-          <p><strong>Pulizie:</strong> quota una tantum di 200 &euro;.</p>
-
-          <p><strong>Biancheria:</strong> quota di 40 &euro; ad ospite.</p>
-
-          <p><strong>Deposito cauzionale:</strong> 500 &euro; all'arrivo in struttura (in contanti).</p>
-
-          <p><strong>Rimborso deposito:</strong> entro 14  giorni dal check-out, previa verifica delle condizioni di Villa Eliana Sul Mare, il deposito sara rimborsato per intero via bonifico bancario.</p>
         </div>
 
       </div>
 
-      <div class="cta-box">
-        <p>Pronto a prenotare il tuo soggiorno a Villa Eliana?</p>
-        <small>Verifica la disponibilit&agrave; nelle tue date e ricevi un preventivo personalizzato entro 24 ore.</small>
-        <a href="contatti.html" class="btn btn--gold">Richiedi disponibilit&agrave;</a>
+      <div class="text-center mt-lg">
+        <p style="color:var(--ink-soft);margin-bottom:1.5rem">Vuoi verificare disponibilita e date?</p>
+        <a href="contatti.html" class="btn btn--primary">Contattaci</a>
       </div>
+
     </div>
   </div>
 </main>
@@ -174,14 +305,8 @@
               <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
             </svg>
           </a>
-          <a href="#" class="social-a" aria-label="Facebook">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-            </svg>
-          </a>
         </div>
       </div>
-
       <div class="footer-col">
         <h5>La Villa</h5>
         <nav class="footer-links">
@@ -192,7 +317,6 @@
           <a href="contatti.html">Richiedi disponibilit&agrave;</a>
         </nav>
       </div>
-
       <div class="footer-col">
         <h5>Porto Pino</h5>
         <nav class="footer-links">
@@ -200,7 +324,6 @@
           <a href="#">Come arrivare</a>
         </nav>
       </div>
-
       <div class="footer-col">
         <h5>Contatti</h5>
         <div class="footer-links">
@@ -209,7 +332,6 @@
         </div>
       </div>
     </div>
-
     <div class="footer-bottom">
       <span>&copy; 2025 Villa Eliana sul Mare</span>
       <div class="footer-policy">
@@ -221,5 +343,89 @@
 </footer>
 
 <script src="js/main.js"></script>
+
+<script>
+/* =========================================================
+   TOC + Anchor automatici sugli H2
+   ========================================================= */
+(function() {
+  const tocList = document.getElementById('toc-list');
+  if (!tocList) return;
+
+  const h2s = Array.from(document.querySelectorAll('.prezzi-content h2'));
+  const used = new Set();
+
+  function slugify(str) {
+    return str
+      .toLowerCase()
+      .trim()
+      .replace(/[’'"]/g, '')
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-');
+  }
+
+  function uniqueId(base) {
+    let id = base || 'sezione';
+    let i = 2;
+    while (used.has(id) || document.getElementById(id)) {
+      id = base + '-' + i;
+      i++;
+    }
+    used.add(id);
+    return id;
+  }
+
+  const iconSvg = `
+    <svg class="anchor-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M10 13a5 5 0 0 1 0-7l1.5-1.5a5 5 0 0 1 7 7L17 13"/>
+      <path d="M14 11a5 5 0 0 1 0 7L12.5 19.5a5 5 0 0 1-7-7L7 11"/>
+    </svg>
+  `;
+
+  h2s.forEach(h2 => {
+    const text = h2.textContent.trim();
+    const base = slugify(text);
+    const id = uniqueId(base);
+    h2.id = id;
+
+    const link = document.createElement('a');
+    link.href = '#' + id;
+    link.className = 'h2-link';
+    link.setAttribute('aria-label', text);
+
+    const span = document.createElement('span');
+    span.textContent = text;
+
+    h2.textContent = '';
+    link.appendChild(span);
+    link.insertAdjacentHTML('beforeend', iconSvg);
+    h2.appendChild(link);
+
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = '#' + id;
+    a.textContent = text;
+    li.appendChild(a);
+    tocList.appendChild(li);
+  });
+
+  const copyBtn = document.getElementById('toc-copy');
+  if (copyBtn && navigator.clipboard) {
+    copyBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const hash = location.hash || ('#' + (h2s[0] ? h2s[0].id : ''));
+      const url = location.origin + location.pathname + hash;
+      navigator.clipboard.writeText(url).then(() => {
+        copyBtn.textContent = 'Copiato';
+        setTimeout(() => copyBtn.textContent = 'Copia link sezione', 1200);
+      });
+    });
+  } else if (copyBtn) {
+    copyBtn.style.display = 'none';
+  }
+})();
+</script>
+
 </body>
 </html>
