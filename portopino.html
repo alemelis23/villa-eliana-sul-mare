@@ -8,51 +8,99 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+
+<!-- IMPORTANTE: allineato al resto del sito -->
+<link rel="stylesheet" href="css/style.css">
+
 <style>
-.attrazioni{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.attr-card{background:var(--white);overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s}
-.attr-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(30,74,92,.12)}
-.attr-img{aspect-ratio:4/3;overflow:hidden}
-.attr-img-ph{width:100%;height:100%;min-height:200px;display:flex;align-items:center;justify-content:center;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3)}
-.attr-body{padding:1.5rem}
-.attr-dist{font-size:.68rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
-.attr-body h3{font-family:var(--display);font-size:1.3rem;color:var(--sea-deep);margin-bottom:.6rem;font-weight:400}
-.attr-body p{font-size:.9rem;color:var(--ink-soft);line-height:1.7;margin:0}
-.esperienze{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.esp-card{background:var(--sand);padding:2rem;border-top:3px solid var(--gold)}
-.esp-badge{display:block;font-size:.65rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
-.esp-card h3{font-family:var(--display);font-size:1.2rem;color:var(--sea-deep);margin-bottom:.75rem;font-weight:400;line-height:1.3}
-.esp-card p{font-size:.88rem;color:var(--ink-soft);line-height:1.7;margin:0}
-.how-box{background:var(--sea-deep);color:var(--sand);padding:2.5rem;margin-top:3rem;text-align:center}
+/* =========================
+   PAGE: PORTO PINO (DESIGN)
+   Coerente con index/prezzi
+   ========================= */
+
+/* HERO */
+.page-hero--territorio{position:relative;overflow:hidden;background:var(--sea-deep)}
+.page-hero--territorio .container{position:relative;z-index:2}
+.page-hero--territorio::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(16,38,52,.92) 0%,rgba(16,38,52,.55) 55%,rgba(16,38,52,.25) 100%);z-index:1}
+.page-hero-media{position:absolute;inset:0;z-index:0}
+.page-hero-media img{width:100%;height:100%;object-fit:cover;object-position:center}
+.page-hero-media .ph{width:100%;height:100%;background:linear-gradient(135deg,#0d2535 0%,#1e4a5c 35%,#2e7a92 65%,#1a3d4f 100%)}
+
+/* ANCHOR NAV */
+.anchorbar{margin-top:-2.1rem;position:relative;z-index:5}
+.anchorbar .inner{background:rgba(245,240,232,.92);backdrop-filter:saturate(160%) blur(8px);border:1px solid rgba(200,186,162,.4);padding:.85rem;border-radius:2px;display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center}
+.anchorbar a{font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--sea-deep);text-decoration:none;padding:.55rem .8rem;border:1px solid rgba(30,74,92,.18);border-radius:999px}
+.anchorbar a:hover{border-color:rgba(184,150,106,.65);color:var(--gold)}
+
+/* SECTION SPACING (coerente) */
+.section-tight{padding:4.5rem 0}
+@media(max-width:768px){.section-tight{padding:3.5rem 0}}
+
+/* ATTRAZIONI */
+.attrazioni{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.attr-card{background:var(--mist);overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s,border-color .35s;border:1px solid rgba(200,186,162,.35)}
+.attr-card:hover{transform:translateY(-4px);box-shadow:0 22px 46px rgba(30,74,92,.12);border-color:rgba(184,150,106,.55)}
+.attr-img{aspect-ratio:4/3;overflow:hidden;background:var(--sea-deep)}
+.attr-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease);display:block}
+.attr-card:hover .attr-img img{transform:scale(1.06)}
+.attr-img-ph{width:100%;height:100%;min-height:210px;display:flex;align-items:center;justify-content:center;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.attr-body{padding:1.6rem}
+.attr-dist{font-size:.68rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.45rem}
+.attr-body h3{font-family:var(--display);font-size:1.34rem;color:var(--sea-deep);margin-bottom:.55rem;font-weight:400;line-height:1.2}
+.attr-body p{font-size:.92rem;color:var(--ink-soft);line-height:1.75;margin:0}
+
+/* ESPERIENZE */
+.esperienze{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.esp-card{background:var(--sand);padding:2.1rem;border:1px solid rgba(200,186,162,.35);border-top:3px solid var(--gold);transition:transform .35s var(--ease),box-shadow .35s}
+.esp-card:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(30,74,92,.10)}
+.esp-badge{display:inline-flex;align-items:center;gap:.5rem;font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.esp-card h3{font-family:var(--display);font-size:1.24rem;color:var(--sea-deep);margin-bottom:.75rem;font-weight:400;line-height:1.3}
+.esp-card p{font-size:.9rem;color:var(--ink-soft);line-height:1.75;margin:0}
+.how-box{background:linear-gradient(135deg,rgba(16,38,52,.98),rgba(30,74,92,.98));color:var(--sand);padding:2.7rem;margin-top:2.2rem;text-align:center;border:1px solid rgba(255,255,255,.08)}
 .how-box p{color:rgba(245,240,232,.82);font-size:.95rem;line-height:1.8;margin-bottom:1.5rem}
 .how-box strong{color:var(--gold-light)}
+
+/* RISTORANTI */
 .risto-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.risto-card{border:1px solid var(--stone);padding:1.75rem;transition:border-color .3s,box-shadow .3s;display:block;color:inherit}
-.risto-card:hover{border-color:var(--gold);box-shadow:0 8px 24px rgba(184,150,106,.15)}
-.risto-emoji{font-size:1.8rem;margin-bottom:.75rem;display:block}
-.risto-name{font-family:var(--display);font-size:1.2rem;color:var(--sea-deep);margin-bottom:.25rem;font-weight:400}
-.risto-tipo{font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;display:block}
-.risto-dist{font-size:.78rem;color:var(--stone-dark);margin-bottom:.75rem;display:block}
-.risto-spec{font-size:.85rem;color:var(--ink-soft);line-height:1.6}
-.consigli-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-.consiglio-box{background:var(--white);padding:2.5rem}
-.consiglio-box h3{font-family:var(--display);font-size:1.3rem;color:var(--sea-deep);margin-bottom:1.25rem;font-weight:400}
-.consiglio-list{display:flex;flex-direction:column;gap:.65rem;list-style:none;padding:0}
-.consiglio-item{display:flex;gap:.65rem;align-items:flex-start;font-size:.9rem;color:var(--ink-soft);line-height:1.55}
-.consiglio-item::before{content:'--';color:var(--gold);flex-shrink:0;margin-top:1px}
-.tip-box{background:var(--sea-deep);padding:2.5rem;grid-column:1/-1}
-.tip-box h4{font-family:var(--display);font-size:1.15rem;color:var(--gold-light);margin-bottom:.75rem;font-weight:400}
-.tip-box p{color:rgba(245,240,232,.78);font-size:.92rem;line-height:1.8;margin:0}
+.risto-card{border:1px solid rgba(200,186,162,.45);background:var(--mist);padding:1.75rem;transition:border-color .3s,box-shadow .3s,transform .3s;display:block;color:inherit;text-decoration:none}
+.risto-card:hover{border-color:rgba(184,150,106,.75);box-shadow:0 10px 28px rgba(30,74,92,.12);transform:translateY(-2px)}
+.risto-emoji{font-size:1.7rem;margin-bottom:.75rem;display:block}
+.risto-name{font-family:var(--display);font-size:1.22rem;color:var(--sea-deep);margin-bottom:.25rem;font-weight:400}
+.risto-tipo{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.55rem;display:block}
+.risto-dist{font-size:.8rem;color:var(--stone-dark);margin-bottom:.8rem;display:block}
+.risto-spec{font-size:.88rem;color:var(--ink-soft);line-height:1.65;margin:0}
+
+/* CONSIGLI */
+.consigli-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+.consiglio-box{background:var(--mist);border:1px solid rgba(200,186,162,.35);padding:2.2rem}
+.consiglio-box h3{font-family:var(--display);font-size:1.35rem;color:var(--sea-deep);margin-bottom:1.15rem;font-weight:400}
+.consiglio-list{display:flex;flex-direction:column;gap:.7rem;list-style:none;padding:0;margin:0}
+.consiglio-item{display:flex;gap:.7rem;align-items:flex-start;font-size:.92rem;color:var(--ink-soft);line-height:1.6}
+.consiglio-item::before{content:'\2014';color:var(--gold);flex-shrink:0;margin-top:1px}
+.tip-box{background:var(--sea-deep);padding:2.4rem;border:1px solid rgba(255,255,255,.08);grid-column:1/-1}
+.tip-box h4{font-family:var(--display);font-size:1.18rem;color:var(--gold-light);margin-bottom:.75rem;font-weight:400}
+.tip-box p{color:rgba(245,240,232,.78);font-size:.94rem;line-height:1.85;margin:0}
+
+/* CTA FINALE */
 .cta-finale{background:linear-gradient(135deg,var(--sea-deep) 0%,var(--sea) 100%);text-align:center;padding:9rem 0}
 .cta-finale h2{font-family:var(--display);color:var(--sand);font-size:clamp(2rem,4vw,3rem);font-weight:400;margin-bottom:1rem}
-.cta-finale p{color:rgba(245,240,232,.72);max-width:480px;margin:0 auto 2.5rem}
-@media(max-width:900px){.attrazioni,.esperienze{grid-template-columns:1fr 1fr}.risto-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.attrazioni,.esperienze,.risto-grid,.consigli-grid{grid-template-columns:1fr}.tip-box{grid-column:1}}
+.cta-finale p{color:rgba(245,240,232,.72);max-width:520px;margin:0 auto 2.5rem}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .attrazioni,.esperienze{grid-template-columns:1fr 1fr}
+  .risto-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .attrazioni,.esperienze,.risto-grid,.consigli-grid{grid-template-columns:1fr}
+  .tip-box{grid-column:1}
+}
 </style>
 </head>
+
 <body>
 <a class="skip-link" href="#main">Salta al contenuto</a>
+
 <header class="site-header" id="site-header">
   <div class="container">
     <div class="header-inner">
@@ -63,16 +111,23 @@
         <a href="villa.html" class="nav-link">La Villa</a>
         <a href="gallery.html" class="nav-link">Gallery</a>
         <a href="prezzi.html" class="nav-link">Prezzi</a>
+        <a href="portopino.html" class="nav-link active">Porto Pino e dintorni</a>
         <a href="manuale.html" class="nav-link">Manuale</a>
-        <a href="portopino.html" class="nav-link active">Porto Pino</a>
         <a href="contatti.html" class="nav-link btn btn--ghost nav-cta">Richiedi disponibilita</a>
       </nav>
     </div>
   </div>
 </header>
+
 <main id="main">
 
-  <div class="page-hero">
+  <!-- HERO con immagine (placeholder pronto) -->
+  <div class="page-hero page-hero--territorio">
+    <div class="page-hero-media" aria-hidden="true">
+      <div class="ph"></div>
+      <!-- Se vuoi: sostituisci il placeholder con una foto reale -->
+      <!-- <img src="images/porto-pino-hero.jpg" alt="" loading="eager"> -->
+    </div>
     <div class="container">
       <span class="eyebrow">Territorio &amp; Esperienze</span>
       <h1>Porto Pino e Dintorni</h1>
@@ -80,45 +135,110 @@
     </div>
   </div>
 
-  <section class="section">
+  <!-- ANCHOR BAR -->
+  <div class="anchorbar" aria-label="Sezioni della pagina">
     <div class="container">
-      <nav class="breadcrumb" aria-label="Percorso di navigazione"><ol><li><a href="index.html">Home</a></li><li>Porto Pino e Dintorni</li></ol></nav>
+      <div class="inner">
+        <a href="#attrazioni">Attrazioni</a>
+        <a href="#esperienze">Esperienze</a>
+        <a href="#ristoranti">Ristoranti</a>
+        <a href="#consigli">Consigli locali</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ATTRAZIONI -->
+  <section class="section section-tight" id="attrazioni">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Percorso di navigazione">
+        <ol><li><a href="index.html">Home</a></li><li>Porto Pino e Dintorni</li></ol>
+      </nav>
+
       <div class="sec-header">
         <span class="eyebrow">Attrazioni vicine</span>
         <h2>Le destinazioni imperdibili</h2>
         <div class="divider"></div>
         <p>La posizione strategica di Villa Eliana vi permette di raggiungere facilmente le pi&ugrave; belle destinazioni del territorio.</p>
       </div>
+
       <div class="attrazioni">
-        <div class="attr-card reveal">
-          <div class="attr-img"><div class="attr-img-ph" style="background:linear-gradient(135deg,#1e4a5c,#3a6e82)">Porto Pino Beach</div></div>
-          <div class="attr-body"><div class="attr-dist">&#128205; 1 km</div><h3>Porto Pino Beach</h3><p>Spiaggia di sabbia bianca finissima con acque cristalline turchesi. Perfetta per famiglie e amanti del relax. Una delle spiagge pi&ugrave; belle della Sardegna meridionale.</p></div>
-        </div>
-        <div class="attr-card reveal">
-          <div class="attr-img"><div class="attr-img-ph" style="background:linear-gradient(135deg,#c8baa2,#ede4d4)">Dune di Sabbia</div></div>
-          <div class="attr-body"><div class="attr-dist">&#9968;&#65039; 2 km</div><h3>Dune di Sabbia Bianca</h3><p>Spettacolari dune che sembrano un piccolo deserto, ideali per passeggiate romantiche al tramonto. Un paesaggio unico e mozzafiato.</p></div>
-        </div>
-        <div class="attr-card reveal">
-          <div class="attr-img"><div class="attr-img-ph" style="background:linear-gradient(135deg,#8c7b6b,#b8966a)">Cantina Santadi</div></div>
-          <div class="attr-body"><div class="attr-dist">&#127863; 23 km</div><h3>Cantina di Santadi</h3><p>Storica cantina produttrice di vini pregiati del Sulcis. Visite guidate e degustazioni su prenotazione. Eccellenza enologica dal 1960.</p></div>
-        </div>
-        <div class="attr-card reveal">
-          <div class="attr-img"><div class="attr-img-ph" style="background:linear-gradient(135deg,#2a5f72,#6fa9bc)">Tuarredda</div></div>
-          <div class="attr-body"><div class="attr-dist">&#127958;&#65039; 35 km</div><h3>Spiaggia di Tuarredda</h3><p>Una delle spiagge pi&ugrave; belle della Sardegna, con sabbia bianca e mare dai colori caraibici. Considerata un vero paradiso terrestre.</p></div>
-        </div>
-        <div class="attr-card reveal">
-          <div class="attr-img"><div class="attr-img-ph" style="background:linear-gradient(135deg,#1a1a18,#3a6e82)">Sant'Antioco</div></div>
-          <div class="attr-body"><div class="attr-dist">&#127963;&#65039; 30 km</div><h3>Sant'Antioco</h3><p>Isola collegata da ponte con siti archeologici fenici e spiagge incontaminate. Storia millenaria e tradizioni autentiche.</p></div>
-        </div>
-        <div class="attr-card reveal">
-          <div class="attr-img"><div class="attr-img-ph" style="background:linear-gradient(135deg,#1e4a5c,#6fa9bc)">Costa del Sud</div></div>
-          <div class="attr-body"><div class="attr-dist">&#127754; 20&ndash;60 km</div><h3>Costa del Sud</h3><p>Itinerario costiero con calette nascoste, fari storici e panorami mozzafiato. Un percorso indimenticabile lungo la costa.</p></div>
-        </div>
+        <article class="attr-card reveal">
+          <div class="attr-img">
+            <div class="attr-img-ph" style="background:linear-gradient(135deg,#1e4a5c,#3a6e82)">Porto Pino Beach</div>
+            <!-- <img src="images/porto-pino-spiaggia.jpg" alt="Spiaggia di Porto Pino" loading="lazy"> -->
+          </div>
+          <div class="attr-body">
+            <div class="attr-dist">&#128205; 1 km</div>
+            <h3>Porto Pino Beach</h3>
+            <p>Spiaggia di sabbia bianca finissima con acque cristalline turchesi. Perfetta per famiglie e amanti del relax. Una delle spiagge pi&ugrave; belle della Sardegna meridionale.</p>
+          </div>
+        </article>
+
+        <article class="attr-card reveal">
+          <div class="attr-img">
+            <div class="attr-img-ph" style="background:linear-gradient(135deg,#c8baa2,#ede4d4)">Dune di Sabbia</div>
+            <!-- <img src="images/dune-porto-pino.jpg" alt="Dune di sabbia bianca a Porto Pino" loading="lazy"> -->
+          </div>
+          <div class="attr-body">
+            <div class="attr-dist">&#9968;&#65039; 2 km</div>
+            <h3>Dune di Sabbia Bianca</h3>
+            <p>Spettacolari dune che sembrano un piccolo deserto, ideali per passeggiate romantiche al tramonto. Un paesaggio unico e mozzafiato.</p>
+          </div>
+        </article>
+
+        <article class="attr-card reveal">
+          <div class="attr-img">
+            <div class="attr-img-ph" style="background:linear-gradient(135deg,#8c7b6b,#b8966a)">Cantina Santadi</div>
+            <!-- <img src="images/cantina-santadi.jpg" alt="Cantina di Santadi" loading="lazy"> -->
+          </div>
+          <div class="attr-body">
+            <div class="attr-dist">&#127863; 23 km</div>
+            <h3>Cantina di Santadi</h3>
+            <p>Storica cantina produttrice di vini pregiati del Sulcis. Visite guidate e degustazioni su prenotazione. Eccellenza enologica dal 1960.</p>
+          </div>
+        </article>
+
+        <article class="attr-card reveal">
+          <div class="attr-img">
+            <div class="attr-img-ph" style="background:linear-gradient(135deg,#2a5f72,#6fa9bc)">Tuarredda</div>
+            <!-- <img src="images/tuarredda.jpg" alt="Spiaggia di Tuarredda" loading="lazy"> -->
+          </div>
+          <div class="attr-body">
+            <div class="attr-dist">&#127958;&#65039; 35 km</div>
+            <h3>Spiaggia di Tuarredda</h3>
+            <p>Una delle spiagge pi&ugrave; belle della Sardegna, con sabbia bianca e mare dai colori caraibici. Considerata un vero paradiso terrestre.</p>
+          </div>
+        </article>
+
+        <article class="attr-card reveal">
+          <div class="attr-img">
+            <div class="attr-img-ph" style="background:linear-gradient(135deg,#1a1a18,#3a6e82)">Sant'Antioco</div>
+            <!-- <img src="images/sant-antioco.jpg" alt="Sant'Antioco" loading="lazy"> -->
+          </div>
+          <div class="attr-body">
+            <div class="attr-dist">&#127963;&#65039; 30 km</div>
+            <h3>Sant'Antioco</h3>
+            <p>Isola collegata da ponte con siti archeologici fenici e spiagge incontaminate. Storia millenaria e tradizioni autentiche.</p>
+          </div>
+        </article>
+
+        <article class="attr-card reveal">
+          <div class="attr-img">
+            <div class="attr-img-ph" style="background:linear-gradient(135deg,#1e4a5c,#6fa9bc)">Costa del Sud</div>
+            <!-- <img src="images/costa-del-sud.jpg" alt="Costa del Sud Sardegna" loading="lazy"> -->
+          </div>
+          <div class="attr-body">
+            <div class="attr-dist">&#127754; 20&ndash;60 km</div>
+            <h3>Costa del Sud</h3>
+            <p>Itinerario costiero con calette nascoste, fari storici e panorami mozzafiato. Un percorso indimenticabile lungo la costa.</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="section section--alt">
+  <!-- ESPERIENZE -->
+  <section class="section section--alt section-tight" id="esperienze">
     <div class="container">
       <div class="sec-header">
         <span class="eyebrow">Esperienze esclusive</span>
@@ -126,11 +246,27 @@
         <div class="divider"></div>
         <p>Possiamo prenotare direttamente queste esperienze per i nostri ospiti, con condizioni dedicate e uno sconto.</p>
       </div>
+
       <div class="esperienze">
-        <div class="esp-card reveal"><div class="esp-badge">&#127863; Esperienza Gourmet</div><h3>Degustazione di vini e prodotti locali presso la Cantina di Santadi</h3><p>Un percorso tra i vini pi&ugrave; rappresentativi della cantina di Santadi, abbinati a sapori locali selezionati. Ideale per chi vuole vivere la Sardegna anche attraverso la sua tradizione enologica.</p></div>
-        <div class="esp-card reveal"><div class="esp-badge">&#127807; Tradizione &amp; Sapori</div><h3>Agriturismo Sogno Sulcitano</h3><p>Un'esperienza autentica tra cucina tipica, atmosfera familiare e prodotti del territorio. Perfetta per una cena speciale o un pranzo rilassante dopo il mare.</p></div>
-        <div class="esp-card reveal"><div class="esp-badge">&#9875; Mare &amp; Avventura</div><h3>Pescaturismo Aldo</h3><p>Vivi il mare da protagonista: uscita in barca, racconti di pesca e momenti indimenticabili lungo la costa. Un'esperienza perfetta per coppie, famiglie e gruppi di amici.</p></div>
+        <div class="esp-card reveal">
+          <span class="esp-badge">&#127863; Esperienza Gourmet</span>
+          <h3>Degustazione di vini e prodotti locali presso la Cantina di Santadi</h3>
+          <p>Un percorso tra i vini pi&ugrave; rappresentativi della cantina di Santadi, abbinati a sapori locali selezionati. Ideale per chi vuole vivere la Sardegna anche attraverso la sua tradizione enologica.</p>
+        </div>
+
+        <div class="esp-card reveal">
+          <span class="esp-badge">&#127807; Tradizione &amp; Sapori</span>
+          <h3>Agriturismo Sogno Sulcitano</h3>
+          <p>Un'esperienza autentica tra cucina tipica, atmosfera familiare e prodotti del territorio. Perfetta per una cena speciale o un pranzo rilassante dopo il mare.</p>
+        </div>
+
+        <div class="esp-card reveal">
+          <span class="esp-badge">&#9875; Mare &amp; Avventura</span>
+          <h3>Pescaturismo Aldo</h3>
+          <p>Vivi il mare da protagonista: uscita in barca, racconti di pesca e momenti indimenticabili lungo la costa. Un'esperienza perfetta per coppie, famiglie e gruppi di amici.</p>
+        </div>
       </div>
+
       <div class="how-box">
         <p><strong>Come funziona:</strong> al tuo arrivo chiedici di prenotarti l'esperienza che desideri e <strong>penseremo a tutto noi</strong>, con <strong>uno sconto riservato agli ospiti di Villa Eliana sul Mare</strong>.</p>
         <a href="contatti.html" class="btn btn--gold">Richiedi informazioni</a>
@@ -138,7 +274,8 @@
     </div>
   </section>
 
-  <section class="section">
+  <!-- RISTORANTI -->
+  <section class="section section-tight" id="ristoranti">
     <div class="container">
       <div class="sec-header">
         <span class="eyebrow">Dove mangiare</span>
@@ -146,6 +283,7 @@
         <div class="divider"></div>
         <p>Scoprite i sapori autentici della Sardegna nei migliori ristoranti della zona.</p>
       </div>
+
       <div class="risto-grid">
         <a href="https://www.instagram.com/lapeschieradabasilio/?hl=it" target="_blank" rel="noopener" class="risto-card reveal">
           <span class="risto-emoji">&#127869;&#65039;</span>
@@ -154,6 +292,7 @@
           <span class="risto-dist">&#128205; Porto Pino &mdash; 1 km</span>
           <p class="risto-spec"><strong>Specialit&agrave;:</strong> Carrello di Antipasti, Bottarga di muggine</p>
         </a>
+
         <a href="https://locandaroselladal1947.it/" target="_blank" rel="noopener" class="risto-card reveal">
           <span class="risto-emoji">&#127863;</span>
           <div class="risto-name">Locanda Rosella</div>
@@ -161,6 +300,7 @@
           <span class="risto-dist">&#128205; Giba &mdash; 10 km</span>
           <p class="risto-spec"><strong>Specialit&agrave;:</strong> Fregola con arselle, Capra in umido</p>
         </a>
+
         <a href="https://www.facebook.com/ristorantelavoriincorso/?locale=it_IT" target="_blank" rel="noopener" class="risto-card reveal">
           <span class="risto-emoji">&#11088;</span>
           <div class="risto-name">Ristorante Lavori in Corso</div>
@@ -172,7 +312,8 @@
     </div>
   </section>
 
-  <section class="section section--alt">
+  <!-- CONSIGLI -->
+  <section class="section section--alt section-tight" id="consigli">
     <div class="container">
       <div class="sec-header">
         <span class="eyebrow">Insider tips</span>
@@ -180,6 +321,7 @@
         <div class="divider"></div>
         <p>Suggerimenti dalla nostra esperienza per vivere al meglio il territorio.</p>
       </div>
+
       <div class="consigli-grid">
         <div class="consiglio-box reveal">
           <h3>Momenti Magici</h3>
@@ -190,6 +332,7 @@
             <li class="consiglio-item">Osservazione delle stelle dalla terrazza</li>
           </ul>
         </div>
+
         <div class="consiglio-box reveal">
           <h3>Esperienze Uniche</h3>
           <ul class="consiglio-list">
@@ -199,14 +342,16 @@
             <li class="consiglio-item">Visita ai siti archeologici fenici</li>
           </ul>
         </div>
+
         <div class="tip-box reveal">
           <h4>Consiglio del Giorno</h4>
-          <p>La sera, non perdetevi il tramonto dalle dune: &egrave; uno spettacolo che rimar&agrave; per sempre nei vostri ricordi. Portate una bottiglia di Vermentino locale per un brindisi perfetto!</p>
+          <p>La sera, non perdetevi il tramonto dalle dune: &egrave; uno spettacolo che rimarr&agrave; per sempre nei vostri ricordi. Portate una bottiglia di Vermentino locale per un brindisi perfetto!</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- CTA FINALE -->
   <section class="cta-finale">
     <div class="container">
       <span class="eyebrow" style="color:var(--gold-light)">Prenota il tuo soggiorno</span>
@@ -221,14 +366,57 @@
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand"><a href="index.html" class="footer-logo">Villa Eliana sul Mare<sub>Porto Pino &middot; Sardegna</sub></a><p>Una dimora esclusiva affacciata sul mare cristallino di Porto Pino.</p><div class="footer-social"><a href="#" class="social-a" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a></div></div>
-      <div class="footer-col"><h5>La Villa</h5><nav class="footer-links"><a href="villa.html">La Villa</a><a href="gallery.html">Gallery</a><a href="prezzi.html">Prezzi e Servizi</a><a href="manuale.html">Manuale della Casa</a><a href="contatti.html">Richiedi disponibilit&agrave;</a></nav></div>
-      <div class="footer-col"><h5>Porto Pino</h5><nav class="footer-links"><a href="portopino.html">Porto Pino e Dintorni</a><a href="portopino.html">Attrazioni</a><a href="portopino.html">Ristoranti</a></nav></div>
-      <div class="footer-col"><h5>Contatti</h5><div class="footer-links"><div class="footer-contact-row"><a href="tel:+393403333116">+39 340 333 3116</a></div><div class="footer-contact-row"><a href="mailto:villaelianasulmare@gmail.com">villaelianasulmare@gmail.com</a></div></div></div>
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">Villa Eliana sul Mare<sub>Porto Pino &middot; Sardegna</sub></a>
+        <p>Una dimora esclusiva affacciata sul mare cristallino di Porto Pino.</p>
+        <div class="footer-social">
+          <a href="#" class="social-a" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>La Villa</h5>
+        <nav class="footer-links">
+          <a href="villa.html">La Villa</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="prezzi.html">Prezzi e Servizi</a>
+          <a href="portopino.html">Porto Pino e Dintorni</a>
+          <a href="manuale.html">Manuale della Casa</a>
+          <a href="contatti.html">Richiedi disponibilit&agrave;</a>
+        </nav>
+      </div>
+
+      <div class="footer-col">
+        <h5>Porto Pino</h5>
+        <nav class="footer-links">
+          <a href="#attrazioni">Attrazioni</a>
+          <a href="#esperienze">Esperienze</a>
+          <a href="#ristoranti">Ristoranti</a>
+        </nav>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contatti</h5>
+        <div class="footer-links">
+          <div class="footer-contact-row"><a href="tel:+393403333116">+39 340 333 3116</a></div>
+          <div class="footer-contact-row"><a href="mailto:villaelianasulmare@gmail.com">villaelianasulmare@gmail.com</a></div>
+        </div>
+      </div>
     </div>
-    <div class="footer-bottom"><span>&copy; 2025 Villa Eliana sul Mare &mdash; Tutti i diritti riservati</span><div class="footer-policy"><a href="#">Privacy Policy</a><a href="#">Cookie Policy</a></div></div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2025 Villa Eliana sul Mare &mdash; Tutti i diritti riservati</span>
+      <div class="footer-policy"><a href="#">Privacy Policy</a><a href="#">Cookie Policy</a></div>
+    </div>
   </div>
 </footer>
-<script src="main.js"></script>
+
+<script src="js/main.js"></script>
 </body>
 </html>
