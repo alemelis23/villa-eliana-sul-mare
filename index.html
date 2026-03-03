@@ -8,14 +8,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="style.css">
 <style>
 /* ── HERO ── */
 .hero { position: relative; min-height: 100svh; display: flex; align-items: flex-end; padding-bottom: 6rem; overflow: hidden; background: var(--sea-deep); }
 .hero-bg { position: absolute; inset: 0; }
 .hero-bg-img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
 .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(16,38,52,.86) 0%, rgba(16,38,52,.32) 55%, rgba(16,38,52,.1) 100%); }
-/* Gradient placeholder when no photo */
 .hero-bg-ph { width: 100%; height: 100%; background: linear-gradient(135deg, #0d2535 0%, #1e4a5c 35%, #2e7a92 65%, #1a3d4f 100%); }
 .hero-content { position: relative; z-index: 2; color: var(--sand); width: 100%; }
 .hero-eyebrow { font-family: var(--body); font-size: .68rem; font-weight: 500; letter-spacing: .28em; text-transform: uppercase; color: var(--gold-light); display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; opacity: 0; transform: translateY(16px); animation: fadeUp .8s var(--ease) .2s forwards; }
@@ -31,9 +30,8 @@
 /* ── INTRO ── */
 .intro { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
 .intro-visual { position: relative; }
-.intro-img { aspect-ratio: 4/5; overflow: hidden; }
-.intro-img-ph { width: 100%; height: 100%; background: linear-gradient(160deg, #c8baa2 0%, #a89070 50%, #8c7b6b 100%); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.3); font-size: .7rem; letter-spacing: .15em; text-transform: uppercase; min-height: 400px; }
-.intro-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+.intro-img { aspect-ratio: 4/5; overflow: hidden; background: linear-gradient(160deg, #1e4a5c 0%, #3a6e82 50%, #6fa9bc 100%); }
+.intro-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); display: block; }
 .intro-img:hover img { transform: scale(1.04); }
 .badge { position: absolute; bottom: -1.5rem; right: -1.5rem; background: var(--gold); color: #fff; width: 118px; height: 118px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-family: var(--display); font-size: 1.5rem; line-height: 1.1; padding: .5rem; z-index: 1; }
 .badge small { font-family: var(--body); font-size: .52rem; letter-spacing: .15em; text-transform: uppercase; margin-top: 3px; opacity: .85; display: block; }
@@ -119,6 +117,7 @@
         <a href="index.html" class="nav-link active">Home</a>
         <a href="villa.html" class="nav-link">La Villa</a>
         <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="portopino.html" class="nav-link">Porto Pino</a>
         <a href="prezzi.html" class="nav-link">Prezzi</a>
         <a href="manuale.html" class="nav-link">Manuale</a>
         <a href="contatti.html" class="nav-link btn btn--ghost nav-cta">Richiedi disponibilita</a>
@@ -133,8 +132,7 @@
   <section class="hero" aria-label="Villa Eliana — benvenuto">
     <div class="hero-bg">
       <div class="hero-bg-ph"></div>
-      <!-- Se vuoi usare una foto, sostituisci il placeholder con un tag img -->
-      <!-- <img class="hero-bg-img" src="images/villa-eliana-hero.jpg" alt="Vista mare Villa Eliana, Porto Pino" loading="eager"> -->
+      <!-- Quando hai la foto: <img class="hero-bg-img" src="images/hero.jpg" alt="Vista mare Villa Eliana, Porto Pino" loading="eager"> -->
     </div>
     <div class="hero-overlay" aria-hidden="true"></div>
     <div class="container">
@@ -157,7 +155,10 @@
       <div class="intro">
         <div class="intro-visual reveal">
           <div class="intro-img">
-            <img src="images/tramonto-villa.jpeg" alt="Tramonto a Villa Eliana sul Mare" loading="lazy">
+            <!-- Foto reale: sostituisci il tag sotto con la tua immagine -->
+            <img src="images/tramonto-villa.jpeg" alt="Tramonto a Villa Eliana sul Mare"
+                 loading="lazy"
+                 onerror="this.style.display='none'">
           </div>
           <div class="badge" aria-hidden="true">Fronte<br>Mare<small>Porto Pino</small></div>
         </div>
@@ -262,7 +263,6 @@
   <section class="territory" aria-labelledby="terr-h">
     <div class="terr-map">
       <div class="terr-map-ph">Foto territorio &mdash; Porto Pino</div>
-      <!-- <img src="images/territorio.jpg" alt="Porto Pino e dintorni" loading="lazy"> -->
     </div>
     <div class="terr-body">
       <span class="eyebrow">Il territorio</span>
@@ -276,6 +276,9 @@
         <li class="terr-item reveal"><span class="terr-dist">30 km</span><div class="terr-info"><strong>Sulcis &mdash; Nuraghe Sirai</strong>Territorio nuragico e storia antica</div></li>
         <li class="terr-item reveal"><span class="terr-dist">60 km</span><div class="terr-info"><strong>Cagliari</strong>Capoluogo di regione, aeroporto internazionale</div></li>
       </ul>
+      <div style="margin-top:2rem">
+        <a href="portopino.html" class="btn btn--outline">Scopri il territorio</a>
+      </div>
     </div>
   </section>
 
@@ -293,7 +296,7 @@
           <div class="faq-ans" id="faq1"><div class="faq-ans-in">La villa pu&ograve; ospitare fino a 8 persone in totale comfort. Per maggiori dettagli sugli spazi e la disposizione delle camere, consulta la sezione <a href="prezzi.html">Prezzi e Servizi</a> o contattaci direttamente.</div></div>
         </div>
         <div class="faq-item">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq2"><span>È possibile affittare la villa per soggiorni brevi?</span><span class="faq-icon" aria-hidden="true"></span></button>
+          <button class="faq-q" aria-expanded="false" aria-controls="faq2"><span>&Egrave; possibile affittare la villa per soggiorni brevi?</span><span class="faq-icon" aria-hidden="true"></span></button>
           <div class="faq-ans" id="faq2"><div class="faq-ans-in">In alta stagione il soggiorno minimo &egrave; di 7 notti (sabato-sabato). In bassa stagione sono possibili periodi pi&ugrave; brevi. Controlla la disponibilit&agrave; nella pagina <a href="prezzi.html">Prezzi e Servizi</a> o scrivici.</div></div>
         </div>
         <div class="faq-item">
@@ -349,17 +352,17 @@
       <div class="footer-col">
         <h5>Porto Pino</h5>
         <nav class="footer-links">
-          <a href="#">Spiagge e Natura</a>
-          <a href="#">Cosa fare nei dintorni</a>
-          <a href="#">Come arrivare</a>
+          <a href="portopino.html">Porto Pino e dintorni</a>
+          <a href="portopino.html#ristoranti">Ristoranti consigliati</a>
+          <a href="portopino.html#esperienze">Esperienze esclusive</a>
         </nav>
       </div>
       <div class="footer-col">
         <h5>Contatti</h5>
         <div class="footer-links">
-          <div class="footer-contact-row"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="flex-shrink:0;margin-top:2px;opacity:.55"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.92 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+39000000000">+39 000 000 0000</a></div>
-          <div class="footer-contact-row"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="flex-shrink:0;margin-top:2px;opacity:.55"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:info@villaelianasulmare.it">info@villaelianasulmare.it</a></div>
-          <div class="footer-contact-row" style="color:rgba(245,240,232,.5)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="flex-shrink:0;margin-top:2px;opacity:.55"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Porto Pino, Sant'Anna Arresi, Sardegna</div>
+          <div class="footer-contact-row"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="flex-shrink:0;margin-top:2px;opacity:.55"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.92 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+393403333116">+39 340 333 3116</a></div>
+          <div class="footer-contact-row"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="flex-shrink:0;margin-top:2px;opacity:.55"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:villaelianasulmare@gmail.com">villaelianasulmare@gmail.com</a></div>
+          <div class="footer-contact-row" style="color:rgba(245,240,232,.5)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="flex-shrink:0;margin-top:2px;opacity:.55"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Via del Pino d'Aleppo 8, Porto Pino</div>
         </div>
       </div>
     </div>
@@ -375,6 +378,6 @@
   <img src="" alt="" id="lb-img">
 </div>
 
-<script src="js/main.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
